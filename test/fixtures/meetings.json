@@ -1,0 +1,52 @@
+{
+  "from": "2021-09-16",
+  "to": "2021-09-17",
+  "page_count": 1,
+  "page_size": 30,
+  "total_records": 2,
+  "next_page_token": "",
+  "meetings": [
+    {
+      "uuid": "f0wf0wf0wf0wf0wf0w",
+      "id": 1111111,
+      "topic": "Ryan Schenk's Personal Meeting Room",
+      "host": "Ryan Schenk",
+      "email": "ryan@westarete.com",
+      "user_type": "Licensed",
+      "start_time": "2021-09-17T18:17:03Z",
+      "end_time": "",
+      "duration": "",
+      "participants": 1,
+      "has_pstn": false,
+      "has_archiving": false,
+      "has_voip": true,
+      "has_3rd_party_audio": false,
+      "has_video": false,
+      "has_screen_share": false,
+      "has_recording": false,
+      "has_sip": false,
+      "dept": ""
+    },
+    {
+      "uuid": "74A74A74A74A74A74A",
+      "id": 2222222,
+      "topic": "Usage dashboard planning",
+      "host": "West Arete",
+      "email": "team@westarete.com",
+      "user_type": "Licensed",
+      "start_time": "2021-09-17T18:00:36Z",
+      "end_time": "",
+      "duration": "",
+      "participants": 3,
+      "has_pstn": false,
+      "has_archiving": false,
+      "has_voip": true,
+      "has_3rd_party_audio": false,
+      "has_video": true,
+      "has_screen_share": true,
+      "has_recording": false,
+      "has_sip": false,
+      "dept": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "event": "meeting.started",
+  "event_ts": 1234566789900,
+  "payload": {
+    "account_id": "o8KK_AAACq6BBEyA70CA",
+    "object": {
+      "uuid": "czLF6FFFoQOKgAB99DlDb9g==",
+      "id": "111111111",
+      "host_id": "uLoRgfbbTayCX6r2Q_qQsQ",
+      "topic": "My Meeting",
+      "type": 2,
+      "start_time": "2019-07-09T17:00:00Z",
+      "duration": 60,
+      "timezone": "America/Los_Angeles"
+    }
+  }
+}
