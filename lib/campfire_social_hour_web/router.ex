@@ -14,16 +14,22 @@ defmodule CampfireSocialHourWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :hooks do
+    plug :accepts, ["json"]
+    plug CampfireSocialHourWeb.Plug.HookAuth
+  end
+
   scope "/", CampfireSocialHourWeb do
     pipe_through :browser
 
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", CampfireSocialHourWeb do
-  #   pipe_through :api
-  # end
+  scope "/hooks", CampfireSocialHourWeb.Hooks, as: :hooks do
+    pipe_through :hooks
+
+    post "/meetings", MeetingController, :event
+  end
 
   # Enables LiveDashboard only for development
   #
