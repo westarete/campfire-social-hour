@@ -1,0 +1,15 @@
+<%= for meeting_row <- Enum.chunk_every(@meetings, 4) do %>
+  <div class="row meeting-row">
+    <%= for meeting <- meeting_row do %>
+      <div id={"meeting_#{meeting.id}"} class="column column-25">
+        <h4><%= meeting.topic %></h4>
+        <div><%= link "Join", to: meeting.link, class: "button button-small", target: "_blank" %></div>
+        <div id={"participant_list_#{meeting.id}"} class="participant-list">
+          <%= for name <- participant_list(meeting.participants) do %>
+            <div><%= name %></div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

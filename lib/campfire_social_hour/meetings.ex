@@ -1,8 +1,6 @@
 defmodule CampfireSocialHour.Meetings do
   alias CampfireSocialHour.Meetings.{MockData, Hardcoded, MeetingParticipantJoiner, StatusServer}
 
-  defdelegate list_mock_meetings(), to: MockData, as: :list_meetings
-
   defdelegate list_meetings(), to: Hardcoded
 
   def list_meetings_with_participants(participants_map) do
