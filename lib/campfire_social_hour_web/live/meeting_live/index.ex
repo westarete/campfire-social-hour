@@ -2,6 +2,7 @@ defmodule CampfireSocialHourWeb.MeetingLive.Index do
   use CampfireSocialHourWeb, :live_view
 
   alias CampfireSocialHour.{Participants, Meetings, ZoomMeetingParticipants}
+  alias CampfireSocialHourWeb.MeetingLive.MeetingComponent
 
   @impl true
   def mount(_params, _session, socket) do
