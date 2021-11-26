@@ -1,8 +1,8 @@
 @media(min-width:1201px) and (max-width:1440px){
 	.banner-wrapper{background-size: cover;padding: 35px 0 60px;}
-	.services-wrp .container,.join-box{max-width: 100%;width: 100%;}
-	.join-lines{padding: 50px 65px;}
-	.join-lines p{font-size:24px;line-height: 36px;}
+	.services-wrp .container,.desc-box{max-width: 100%;width: 100%;}
+	.site-desc{padding: 50px 65px;}
+	.site-desc p{font-size:24px;line-height: 36px;}
 
 	.services-wrp{padding: 75px 0 80px;}
 	.services-box{padding: 10px;}
@@ -17,9 +17,9 @@
 
 @media(min-width:1025px) and (max-width:1200px){
 	.banner-wrapper{background-size: cover;padding: 35px 0 60px;}
-	.services-wrp .container,.join-box{max-width: 100%;width: 100%;}
-	.join-lines{padding: 50px 65px;}
-	.join-lines p{font-size:18px;line-height: 28px;}
+	.services-wrp .container,.desc-box{max-width: 100%;width: 100%;}
+	.site-desc{padding: 50px 65px;}
+	.site-desc p{font-size:18px;line-height: 28px;}
 
 	.services-wrp{padding: 75px 0 80px;}
 	.services-box{padding: 10px;}
@@ -34,9 +34,9 @@
 
 @media(min-width:992px) and (max-width:1024px){
 	.banner-wrapper{background-size: cover;padding: 35px 0 60px;}
-	.services-wrp .container,.join-box{max-width: 100%;width: 100%;}
-	.join-lines{padding: 50px 65px;}
-	.join-lines p{font-size:18px;line-height: 28px;}
+	.services-wrp .container,.desc-box{max-width: 100%;width: 100%;}
+	.site-desc{padding: 50px 65px;}
+	.site-desc p{font-size:18px;line-height: 28px;}
 
 	.services-wrp{padding: 75px 0 80px;}
 	.services-box{padding: 10px;}
@@ -51,9 +51,9 @@
 
 @media(min-width:768px) and (max-width:991px){
 	.banner-wrapper{background-size: cover;padding: 35px 0 60px;}
-	.services-wrp .container,.join-box{max-width: 100%;width: 100%;}
-	.join-lines{padding: 50px 65px;}
-	.join-lines p{font-size:18px;line-height: 28px;}
+	.services-wrp .container,.desc-box{max-width: 100%;width: 100%;}
+	.site-desc{padding: 50px 65px;}
+	.site-desc p{font-size:18px;line-height: 28px;}
 
 	.services-wrp{padding: 75px 0 80px;}
 	.services-box{padding: 10px;}
@@ -77,12 +77,12 @@
 	.lg-bx.center-lg{margin: 0 0 30px;}
 	.banner-wrapper .btn-group{margin: 0 0 40px;}
 	.banner-wrapper .btn-group .btn-main{padding: 10px 30px;font-size: 14px;}
-	.join-box{padding: 10px;border-radius: 5px;}
-	.join-lines{padding: 25px;border-radius: 5px;}
-	.join-lines p{font-size: 15px;line-height: 25px;}
+	.desc-box{padding: 10px;border-radius: 5px;}
+	.site-desc{padding: 25px;border-radius: 5px;}
+	.site-desc p{font-size: 15px;line-height: 25px;}
 
 	.services-wrp{padding: 40px 10px;}
-	.services-wrp .container,.join-box{max-width: 100%;width: 100%;}
+	.services-wrp .container,.desc-box{max-width: 100%;width: 100%;}
 	.services-box{padding: 10px;background-size: cover;}
 	.services-row{display: block;padding: 25px;}
 	.services-img img{display: none;}
@@ -102,12 +102,12 @@
 	.lg-bx.center-lg{margin: 0 0 30px;}
 	.banner-wrapper .btn-group{margin: 0 0 40px;}
 	.banner-wrapper .btn-group .btn-main{padding: 10px 30px;font-size: 14px;}
-	.join-box{padding: 10px;border-radius: 5px;}
-	.join-lines{padding: 25px;border-radius: 5px;}
-	.join-lines p{font-size: 15px;line-height: 25px;}
+	.desc-box{padding: 10px;border-radius: 5px;}
+	.site-desc{padding: 25px;border-radius: 5px;}
+	.site-desc p{font-size: 15px;line-height: 25px;}
 
 	.services-wrp{padding: 40px 10px;}
-	.services-wrp .container,.join-box{max-width: 100%;width: 100%;}
+	.services-wrp .container,.desc-box{max-width: 100%;width: 100%;}
 	.services-box{padding: 10px;background-size: cover;}
 	.services-row{display: block;padding: 35px;}
 	.services-img img{display: none;}
@@ -126,12 +126,12 @@
 	.lg-bx.center-lg{margin: 0 0 30px;}
 	.banner-wrapper .btn-group{margin: 0 0 40px;}
 	.banner-wrapper .btn-group .btn-main{padding: 10px 30px;font-size: 12.38px;}
-	.join-box{padding: 10px;border-radius: 5px;}
-	.join-lines{padding: 25px;border-radius: 5px;}
-	.join-lines p{font-size: 15px;line-height: 25px;}
+	.desc-box{padding: 10px;border-radius: 5px;}
+	.site-desc{padding: 25px;border-radius: 5px;}
+	.site-desc p{font-size: 15px;line-height: 25px;}
 
 	.services-wrp{padding: 40px 10px;}
-	.services-wrp .container,.join-box{max-width: 100%;width: 100%;}
+	.services-wrp .container,.desc-box{max-width: 100%;width: 100%;}
 	.services-box{padding: 10px;background-size: cover;}
 	.services-row{display: block;padding: 25px;}
 	.services-img img{display: none;}
