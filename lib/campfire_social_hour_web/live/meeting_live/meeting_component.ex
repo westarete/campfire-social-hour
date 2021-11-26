@@ -3,13 +3,23 @@ defmodule CampfireSocialHourWeb.MeetingLive.MeetingComponent do
 
   def render(assigns) do
     ~H"""
-      <div id={"meeting_#{@id}"} class="column column-25">
-        <h4><%= @topic %></h4>
-        <div><%= link "Join", to: @link, class: "button button-small", target: "_blank" %></div>
-        <div id={"participant_list_#{@id}"} class="participant-list">
-          <%= for name <- @participants do %>
-            <div><%= name %></div>
-          <% end %>
+      <div class="col-md-6 col-sm-6" id={"meeting-#{@id}"}>
+        <div class="services-box">
+          <div class="services-row">
+            <div class="services-img">
+              <img src="images/service-img.png" alt="">
+              <h3>
+                <%= link @topic, to: @link, class: "button button-small", target: "_blank" %>
+              </h3>
+            </div>
+            <div class="service-data">
+              <ul id={"participants-#{@id}"}>
+                <%= for name <- @participants do %>
+                  <li><%= name %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     """

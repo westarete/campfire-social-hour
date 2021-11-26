@@ -1,0 +1,37 @@
+<header class="banner-wrapper">
+  <div class="container">
+    <div class="logo-row">
+      <div class="row">
+        <div class="col-md-3 col-sm-6" id="rone">
+          <div class="lg-bx">
+            <a href="#"><img src="images/logo1.png" alt=""></a>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12" id="rtwo">
+          <div class="lg-bx center-lg">
+            <a href="#"><img src="images/logo.png" alt=""></a>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" id="rthree">
+          <div class="lg-bx">
+            <a href="#"><img src="images/logo2.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= if @instructions do %>
+      <div class="btn-group">
+        <a href="#" class="btn-main">Back to Canvas</a>
+        <a href="#" class="btn-main">About This app</a>
+      </div>
+
+      <div class="join-box">
+        <div class="join-lines">
+          <p>Join Your friends and meet new Colleagues in any of the meet-me rooms below. Click in the room names below to
+            join the others in a Zoom room. Feel free to come back and switch any time.</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</header>
