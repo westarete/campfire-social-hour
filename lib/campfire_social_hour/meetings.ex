@@ -1,5 +1,5 @@
 defmodule CampfireSocialHour.Meetings do
-  alias CampfireSocialHour.Meetings.{MockData, Hardcoded, MeetingParticipantJoiner, StatusServer}
+  alias CampfireSocialHour.Meetings.{Hardcoded, MeetingParticipantJoiner, StatusServer}
 
   defdelegate list_meetings(), to: Hardcoded
 
