@@ -1,22 +1,22 @@
-<header class="banner-wrapper">
+<header class="header">
   <div class="container">
     <div class="logo-row">
       <div class="row">
         <div class="col-md-3 col-sm-6" id="rone">
           <div class="lg-bx">
-            <a href="#"><img src="images/internet2-logo.png" alt="Internet2"></a>
+            <a href="https://internet2.edu"><img src="/images/internet2-logo.png" alt="Internet2"></a>
           </div>
         </div>
         <div class="col-md-6 col-sm-12" id="rtwo">
           <div class="lg-bx center-lg">
             <h1>
-              <img src="images/tech-extra-banner.png" alt="Tech Extra 2021">
+              <img src="/images/tech-extra-banner.png" alt="Tech Extra 2021">
             </h1>
           </div>
         </div>
         <div class="col-md-3 col-sm-6" id="rthree">
           <div class="lg-bx">
-            <a href="#"><img src="images/west-arete-logo.png" alt="West Arete"></a>
+            <a href="https://westarete.com"><img src="/images/west-arete-logo.png" alt="West Arete"></a>
           </div>
         </div>
       </div>
@@ -24,8 +24,8 @@
 
     <%= if @instructions do %>
       <nav class="btn-group">
-        <a href="#" class="btn-main">Back to Canvas</a>
-        <a href="#" class="btn-main">About This app</a>
+        <%= link "Back to Canvas", to: "https://learning.internet2.edu/courses/81", class: "btn-main" %>
+        <%= link "About This App", to: Routes.page_path(CampfireSocialHourWeb.Endpoint, :about), class: "btn-main" %>
       </nav>
 
       <div class="desc-box">

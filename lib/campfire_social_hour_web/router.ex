@@ -23,7 +23,11 @@ defmodule CampfireSocialHourWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    live "/meetings", MeetingLive.Index, :index
+    get "/about", PageController, :about
+
+    live "/meetings/6RW4JX", MeetingLive.Index, :index
+    live "/meetings/6rw4jx", MeetingLive.Index, :index
+    live "/meetings/testarete", MeetingLive.Index, :index
   end
 
   scope "/hooks", CampfireSocialHourWeb.Hooks, as: :hooks do
