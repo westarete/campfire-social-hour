@@ -4,65 +4,65 @@ defmodule CampfireSocialHour.Meetings.Hardcoded do
   def list_meetings() do
     [
       %Meeting{
-        topic: "Abisko",
-        id: 9_562_130_350,
-        link: "https://us02web.zoom.us/j/9562130350?pwd=czJDMlg2MTA2RjUrdElDV0NIRS85QT09"
+        topic: "Ashburn",
+        id: 86_376_488_264,
+        link: "https://us02web.zoom.us/j/86376488264?pwd=WmduUmdVZWxoTnZsaitWN002MkdHdz09"
       },
       %Meeting{
-        topic: "Banff",
-        id: 86_528_458_980,
-        link: "https://us02web.zoom.us/j/86528458980?pwd=WjhxYThyd2hKdkQyWXlTaEkwdG1mQT09"
+        topic: "Chicago",
+        id: 83_621_026_805,
+        link: "https://us02web.zoom.us/j/83621026805?pwd=RkxacmVUQlBpNE4zcUlqYUFRdzBlZz09"
       },
       %Meeting{
-        topic: "Burren",
-        id: 8_844_261_989,
-        link: "https://us02web.zoom.us/j/8844261989?pwd=dmU4NmxhQzJaS3Yvc3M3cUcwODhBQT09"
+        topic: "Dallas",
+        id: 88_662_029_375,
+        link: "https://us02web.zoom.us/j/88662029375?pwd=aWR6alV3U2Joa21LN0NpdHEyZkNiQT09"
       },
       %Meeting{
-        topic: "Denali",
-        id: 83_150_239_580,
-        link: "https://us02web.zoom.us/j/83150239580?pwd=TndmeWE0RmhCLzFVRGwzblRVMzZaZz09"
+        topic: "San Jose",
+        id: 85_968_416_796,
+        link: "https://us02web.zoom.us/j/85968416796?pwd=L2EycEp5aXh6eHRqOUw3YWpEcjUwQT09"
       },
       %Meeting{
-        topic: "Glacier",
-        id: 7_180_501_831,
-        link: "https://us02web.zoom.us/j/7180501831?pwd=ZkNnc3NFV0VrSmRIenhZSzAyRzV6Zz09"
+        topic: "NYC",
+        id: 85_407_580_723,
+        link: "https://us02web.zoom.us/j/85407580723?pwd=aWFqQTR3Y3RpMDdMVGtzNS8vN05RUT09"
       },
       %Meeting{
-        topic: "Jasmund",
-        id: 83_406_089_873,
-        link: "https://us02web.zoom.us/j/83406089873?pwd=TXJwR3M0cnJsZWkvcFEyaEZUZHgzdz09"
-      },
-      %Meeting{
-        topic: "Kruger",
-        id: 2_860_071_973,
-        link: "https://us02web.zoom.us/j/2860071973?pwd=WU8rL1V0ak4xOUpScTk4STFpSU1WQT09"
-      },
-      %Meeting{
-        topic: "Rondane",
-        id: 82_523_001_073,
-        link: "https://us02web.zoom.us/j/82523001073?pwd=ZlRtcHBYY0lwUDV0NEpIcWFLUzE4UT09"
-      },
-      %Meeting{
-        topic: "Snowdonia",
-        id: 2_832_857_344,
-        link: "https://us02web.zoom.us/j/2832857344?pwd=c20vQlpjb0gwbHZBSHUrSXF4Mk10QT09"
-      },
-      %Meeting{
-        topic: "Sumava",
-        id: 85_230_728_496,
-        link: "https://us02web.zoom.us/j/85230728496?pwd=YnNTRmRHTGo0UlZ4Q3VZNXRkbzM4UT09"
-      },
-      %Meeting{
-        topic: "Swiss",
-        id: 8_897_037_919,
-        link: "https://us02web.zoom.us/j/8897037919?pwd=WHhzakNlNDQ2ejl3Y09pRzRxQ0ZzZz09"
-      },
-      %Meeting{
-        topic: "Yosemite",
-        id: 86_150_137_083,
-        link: "https://us02web.zoom.us/j/86150137083?pwd=YUs5c01XZW5Uc2ovUndLQjhya1drdz09"
+        topic: "Seattle",
+        id: 83_967_015_444,
+        link: "https://us02web.zoom.us/j/83967015444?pwd=czl1MnVnTHRSdEJaa2JkQU5oUXhidz09"
       }
+      # %Meeting{
+      #   topic: "",
+      #   id: 88278724058,
+      #   link: "https://us02web.zoom.us/j/88278724058?pwd=enBIQkw2VHVTc2NJaXZ2bE9EODg3QT09"
+      # },
+      # %Meeting{
+      #   topic: "",
+      #   id: 85974105339,
+      #   link: "https://us02web.zoom.us/j/85974105339?pwd=bUlXSmd4bVJFNmFPV0RrVEZ4QTBpdz09"
+      # },
+      # %Meeting{
+      #   topic: "",
+      #   id: 89994540216,
+      #   link: "https://us02web.zoom.us/j/89994540216?pwd=VmhqTTFFc0hLN3VMZmttNWRXenNwUT09"
+      # },
+      # %Meeting{
+      #   topic: "",
+      #   id: 85731735895,
+      #   link: "https://us02web.zoom.us/j/85731735895?pwd=Yk9tT2xERmQ2ejBobkxSREo0NFFVUT09"
+      # },
+      # %Meeting{
+      #   topic: "",
+      #   id: 83891028430,
+      #   link: "https://us02web.zoom.us/j/83891028430?pwd=ZmtqdGJjM3U1WlVmeWJieGNGelZUUT09"
+      # },
+      # %Meeting{
+      #   topic: "",
+      #   id: 89916042904,
+      #   link: "https://us02web.zoom.us/j/89916042904?pwd=K0JzK3F2Q3FQeHhXVTVscjBocVRhUT09"
+      # }
     ]
   end
 end
