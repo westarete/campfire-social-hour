@@ -1,14 +1,9 @@
-
-<section class="services-wrp">
-  <div class="container">
-    <div class="row">
-      <%= for meeting <- @meetings do %>
-        <.live_component module={MeetingComponent}
-                         id={meeting.id}
-                         topic={meeting.topic}
-                         link={meeting.link}
-                         participants={participant_list(meeting.participants)} />
-      <% end %>
-    </div>
-  </div>
-</section>
+<div class="row row-cols-1 row-cols-sm-2">
+  <%= for meeting <- @meetings do %>
+    <.live_component module={MeetingComponent}
+                      id={meeting.id}
+                      topic={meeting.topic}
+                      link={meeting.link}
+                      participants={participant_list(meeting.participants)} />
+  <% end %>
+</div>

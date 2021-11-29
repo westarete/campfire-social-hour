@@ -19,6 +19,7 @@ defmodule CampfireSocialHourWeb.MeetingLive.Index do
   def participant_list(participants, limit \\ 8) do
     truncated_participants =
       participants
+      |> Enum.reverse()
       |> Enum.take(limit)
       |> Enum.map(fn %{"user_name" => user_name} -> user_name end)
 
