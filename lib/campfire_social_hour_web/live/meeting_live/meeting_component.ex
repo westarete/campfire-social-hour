@@ -7,12 +7,10 @@ defmodule CampfireSocialHourWeb.MeetingLive.MeetingComponent do
         <div class="room-wrapper">
           <div class="room">
 
-            <div class="room-title">
+            <%= link to: @link, class: "room-title", target: "_blank", aria_label: "Join the #{@topic} room" do %>
               <img src="/images/room-icon.png" role="presentation" alt="" />
-              <h3>
-                <%= link @topic, to: @link, class: "button button-small", target: "_blank", aria_label: "Join the #{@topic} room" %>
-              </h3>
-            </div>
+              <h3><%= @topic %></h3>
+            <% end %>
 
             <ul class="room-data" id={"participants-#{@id}"} aria-label={"Members in the #{@topic} room"} role='list'>
               <%= for name <- @participants do %>
