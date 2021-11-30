@@ -24,8 +24,10 @@ defmodule CampfireSocialHourWeb.Router do
 
     get "/", PageController, :about
 
-    live "/meetings/EyMZDb2xlN9wkw4UWZ1vItiA3C63s3sz", MeetingLive.Index, :index
-    live "/meetings/testarete", MeetingLive.Index, :index
+    # This may be considered bad style to read the environment var here instead of a plug, but... works!
+    live "/meetings/#{Application.get_env(:campfire_social_hour, :meeting_secret)}",
+         MeetingLive.Index,
+         :index
   end
 
   scope "/hooks", CampfireSocialHourWeb.Hooks, as: :hooks do
