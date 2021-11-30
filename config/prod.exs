@@ -10,9 +10,10 @@ import Config
 # which you should run after static files are built and
 # before starting your production server.
 config :campfire_social_hour, CampfireSocialHourWeb.Endpoint,
-  url: [host: "campfire-social-hour.gigalixirapp.com", port: 80],
+  url: [host: "techextra21.westarete.com", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json",
-  force_ssl: [rewrite_on: [:x_forwarded_proto]
+  force_ssl: [rewrite_on: [:x_forwarded_proto],
+  check_origin: ["campfire-social-hour.gigalixirapp.com"]
 
 # Do not print debug messages in production
 config :logger, level: :info
