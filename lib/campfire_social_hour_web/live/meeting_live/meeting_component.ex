@@ -7,12 +7,12 @@ defmodule CampfireSocialHourWeb.MeetingLive.MeetingComponent do
         <div class="room-wrapper">
           <div class="room">
 
-            <%= link to: @link, class: "room-title", target: "_blank", aria_label: "Join the #{@topic} room" do %>
+            <a href={@link} class="room-title" target="_blank" aria_label={link_aria_label(@topic, @participants)} >
               <img src="/images/room-icon.png" role="presentation" alt="" />
               <h3><%= @topic %></h3>
-            <% end %>
+            </a>
 
-            <ul class="room-data" id={"participants-#{@id}"} aria-label={"Members in the #{@topic} room"} role='list'>
+            <ul class="room-data" id={"participants-#{@id}"} aria-label={"People in the #{@topic} room"} role='list'>
               <%= for name <- @participants do %>
                 <li><%= name %></li>
               <% end %>
@@ -23,4 +23,12 @@ defmodule CampfireSocialHourWeb.MeetingLive.MeetingComponent do
       </div>
     """
   end
+
+  defp link_aria_label(topic, participants) do
+    "Join the #{topic} room, #{do_link_participants(length(participants))}"
+  end
+
+  defp do_link_participants(_n = 0), do: "and you'll be the only one there"
+  defp do_link_participants(_n = 1), do: "with 1 other person"
+  defp do_link_participants(n), do: "with #{n} other people"
 end
