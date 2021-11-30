@@ -25,8 +25,7 @@ defmodule CampfireSocialHourWeb.Router do
     get "/", PageController, :index
     get "/about", PageController, :about
 
-    live "/meetings/6RW4JX", MeetingLive.Index, :index
-    live "/meetings/6rw4jx", MeetingLive.Index, :index
+    live "/meetings/EyMZDb2xlN9wkw4UWZ1vItiA3C63s3sz", MeetingLive.Index, :index
     live "/meetings/testarete", MeetingLive.Index, :index
   end
 
