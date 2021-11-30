@@ -23,9 +23,12 @@ defmodule CampfireSocialHourWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :about
+  end
 
-    # This may be considered bad style to read the environment var here instead of a plug, but... works!
-    live "/meetings/#{Application.get_env(:campfire_social_hour, :meeting_secret)}",
+  scope "/meetings/:meeting_id", CampfireSocialHourWeb do
+    pipe_through [:browser, CampfireSocialHourWeb.Plug.MeetingAuth]
+
+    live "/",
          MeetingLive.Index,
          :index
   end
