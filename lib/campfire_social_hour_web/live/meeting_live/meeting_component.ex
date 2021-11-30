@@ -7,7 +7,7 @@ defmodule CampfireSocialHourWeb.MeetingLive.MeetingComponent do
         <div class="room-wrapper">
           <div class="room">
 
-            <a href={@link} class="room-title" target="_blank" aria_label={link_aria_label(@topic, @participants)} >
+            <a href={@link} class="room-title" target="_blank" aria-label={link_aria_label(@topic, @participants)} >
               <img src="/images/room-icon.png" role="presentation" alt="" />
               <h3><%= @topic %></h3>
             </a>
@@ -25,7 +25,7 @@ defmodule CampfireSocialHourWeb.MeetingLive.MeetingComponent do
   end
 
   defp link_aria_label(topic, participants) do
-    "Join the #{topic} room, #{do_link_participants(length(participants))}"
+    "Join the #{topic} room #{do_link_participants(length(participants))}"
   end
 
   defp do_link_participants(_n = 0), do: "and you'll be the only one there"

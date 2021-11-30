@@ -1,6 +1,6 @@
 <header class="header">
   <div class="container">
-    <div class="logo-row">
+    <div class="logo-row" role="banner">
       <div class="row">
         <div class="col-md-3 col-sm-6" id="rone">
           <div class="lg-bx">
@@ -23,13 +23,13 @@
     </div>
 
     <%= if @instructions do %>
-      <nav class="btn-group">
+      <nav class="btn-group" role="navigation">
         <%= link "Back to Canvas", to: "https://learning.internet2.edu/courses/81", class: "btn-main" %>
         <%= link "About This App", to: Routes.page_path(CampfireSocialHourWeb.Endpoint, :about), class: "btn-main" %>
       </nav>
 
       <div class="desc-box">
-        <h2 class="site-desc" aria-labelledby='navigation instructions'>
+        <h2 class="site-desc" aria-label='navigation instructions'>
           Join your friends and meet new colleagues in any of the meet-me rooms below. Click on a room name below to join the other participants in a Zoom room. Feel free to come back and switch rooms any time.
         </h2>
       </div>
