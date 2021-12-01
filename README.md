@@ -10,7 +10,7 @@ Next, copy the config files for dev and test modes:
 
 ```shell
 $ cp config/dev.secret.exs.example config/dev.secret.exs
-$ cp config/test.secret.exs.example test.secret.exs
+$ cp config/test.secret.exs.example config/test.secret.exs
 ```
 
 The values for these configuration files is discussed below
