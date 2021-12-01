@@ -24,7 +24,7 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 ## Customization for your event
 
-This app currently does not use a relational database. Instead, the list of meetings is hardcoded in the aptly named `CampfireSocialHour.Meetings.Hardcoded` module which can be found in `lib/campfire_social_hour/meetings/hardcoded.ex`. Open that module and change it to return as many meetings as you desire. Each room needs a name, a url, and Zoom's id for that room—the samed ID that is in the URL. For example if the Zoom meeting URL is this: https://us02web.zoom.us/j/86376488264?pwd=WmduUmdVZWxoTnZsaitWN002MkdHdz09 then the ID would be 86376488264.
+This app currently does not use a relational database. Instead, the list of meetings is hardcoded in the aptly named `CampfireSocialHour.Meetings.Hardcoded` module which can be found in `lib/campfire_social_hour/meetings/hardcoded.ex`. Open that module and change it to return as many meetings as you desire. Each room needs a name, a url, and Zoom's id for that room—the samed ID that is in the URL. For example if the Zoom meeting URL is this: https://us02web.zoom.us/j/86376488264?pwd=abc123 then the ID would be 86376488264.
 
 ## App Configuration
 
