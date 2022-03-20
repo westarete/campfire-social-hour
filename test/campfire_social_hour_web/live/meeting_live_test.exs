@@ -30,11 +30,15 @@ defmodule CampfireSocialHourWeb.MeetingLiveTest do
     |> safe_to_string()
   end
 
+  defp meeting_index_path(conn) do
+    Routes.meeting_index_path(conn, :index, Application.fetch_env!(:campfire_social_hour, :meeting_secret))
+  end
+
   describe "Index" do
     setup [:clean_state, :create_meetings]
 
     test "lists all meetings", %{conn: conn, meetings: meetings, participant: participant} do
-      {:ok, _index_live, html} = live(conn, Routes.meeting_index_path(conn, :index))
+      {:ok, _index_live, html} = live(conn, meeting_index_path(conn))
 
       for %Meetings.Meeting{topic: t} <- meetings do
         assert html =~ escape(t)
@@ -44,7 +48,7 @@ defmodule CampfireSocialHourWeb.MeetingLiveTest do
     end
 
     test "adds new participants", %{conn: conn, meetings: [meeting | _]} do
-      {:ok, index_live, _html} = live(conn, Routes.meeting_index_path(conn, :index))
+      {:ok, index_live, _html} = live(conn, meeting_index_path(conn))
 
       # Create a new participant, add it to the MeetingParticipants list, and broadcast to view
       new_participant = TestFactory.participant(456)
