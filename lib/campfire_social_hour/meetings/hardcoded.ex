@@ -5,64 +5,34 @@ defmodule CampfireSocialHour.Meetings.Hardcoded do
     [
       %Meeting{
         topic: "Ashburn",
-        id: 86_376_488_264,
-        link: "https://us02web.zoom.us/j/86376488264?pwd=WmduUmdVZWxoTnZsaitWN002MkdHdz09"
+        id: 88_168_094_255,
+        link: "https://us02web.zoom.us/j/88168094255?pwd=SjY0N0VCaTdyRzMwZ1ArajZwemZqUT09"
       },
       %Meeting{
         topic: "Chicago",
-        id: 83_621_026_805,
-        link: "https://us02web.zoom.us/j/83621026805?pwd=RkxacmVUQlBpNE4zcUlqYUFRdzBlZz09"
+        id: 89_509_434_465,
+        link: "https://us02web.zoom.us/j/89509434465?pwd=VnlBazNnemYzWkM2ZnVIeklKOUJ0UT09"
       },
       %Meeting{
         topic: "Dallas",
-        id: 88_662_029_375,
-        link: "https://us02web.zoom.us/j/88662029375?pwd=aWR6alV3U2Joa21LN0NpdHEyZkNiQT09"
+        id: 88_241_709_171,
+        link: "https://us02web.zoom.us/j/88241709171?pwd=WEJ1OWZiejdkZlVYMnNSOEVrTXdEQT09"
       },
       %Meeting{
         topic: "San Jose",
-        id: 85_968_416_796,
-        link: "https://us02web.zoom.us/j/85968416796?pwd=L2EycEp5aXh6eHRqOUw3YWpEcjUwQT09"
+        id: 81_323_197_405,
+        link: "https://us02web.zoom.us/j/81323197405?pwd=b3hjaE1rMDFGVExaRk5RRzNyOVVmZz09"
       },
       %Meeting{
         topic: "NYC",
-        id: 85_407_580_723,
-        link: "https://us02web.zoom.us/j/85407580723?pwd=aWFqQTR3Y3RpMDdMVGtzNS8vN05RUT09"
+        id: 85_141_035_586,
+        link: "https://us02web.zoom.us/j/85141035586?pwd=VEZOejhDaDFpSVdaeGF5TFFDSUdZZz09"
       },
       %Meeting{
         topic: "Seattle",
-        id: 83_967_015_444,
-        link: "https://us02web.zoom.us/j/83967015444?pwd=czl1MnVnTHRSdEJaa2JkQU5oUXhidz09"
+        id: 83_871_293_505,
+        link: "https://us02web.zoom.us/j/83871293505?pwd=bXBjamxvdGxkMHVVcmVYa1VxY2VtZz09"
       }
-      # %Meeting{
-      #   topic: "",
-      #   id: 88278724058,
-      #   link: "https://us02web.zoom.us/j/88278724058?pwd=enBIQkw2VHVTc2NJaXZ2bE9EODg3QT09"
-      # },
-      # %Meeting{
-      #   topic: "",
-      #   id: 85974105339,
-      #   link: "https://us02web.zoom.us/j/85974105339?pwd=bUlXSmd4bVJFNmFPV0RrVEZ4QTBpdz09"
-      # },
-      # %Meeting{
-      #   topic: "",
-      #   id: 89994540216,
-      #   link: "https://us02web.zoom.us/j/89994540216?pwd=VmhqTTFFc0hLN3VMZmttNWRXenNwUT09"
-      # },
-      # %Meeting{
-      #   topic: "",
-      #   id: 85731735895,
-      #   link: "https://us02web.zoom.us/j/85731735895?pwd=Yk9tT2xERmQ2ejBobkxSREo0NFFVUT09"
-      # },
-      # %Meeting{
-      #   topic: "",
-      #   id: 83891028430,
-      #   link: "https://us02web.zoom.us/j/83891028430?pwd=ZmtqdGJjM3U1WlVmeWJieGNGelZUUT09"
-      # },
-      # %Meeting{
-      #   topic: "",
-      #   id: 89916042904,
-      #   link: "https://us02web.zoom.us/j/89916042904?pwd=K0JzK3F2Q3FQeHhXVTVscjBocVRhUT09"
-      # }
     ]
   end
 end
