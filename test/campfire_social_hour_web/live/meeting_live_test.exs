@@ -31,7 +31,11 @@ defmodule CampfireSocialHourWeb.MeetingLiveTest do
   end
 
   defp meeting_index_path(conn) do
-    Routes.meeting_index_path(conn, :index, Application.fetch_env!(:campfire_social_hour, :meeting_secret))
+    Routes.meeting_index_path(
+      conn,
+      :index,
+      Application.fetch_env!(:campfire_social_hour, :meeting_secret)
+    )
   end
 
   describe "Index" do

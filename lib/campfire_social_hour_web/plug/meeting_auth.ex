@@ -11,6 +11,7 @@ defmodule CampfireSocialHourWeb.Plug.MeetingAuth do
   end
 
   defp authorize(conn, _allowed = true), do: conn
+
   defp authorize(conn, _not_allowed) do
     conn
     |> Phoenix.Controller.render(CampfireSocialHourWeb.ErrorView, :"404")

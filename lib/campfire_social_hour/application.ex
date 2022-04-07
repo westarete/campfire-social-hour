@@ -11,7 +11,7 @@ defmodule CampfireSocialHour.Application do
       # Start the meeting participant list server
       {CampfireSocialHour.ZoomMeetingParticipants.ParticipantServer, []},
       # Start the meeting status server
-      {CampfireSocialHour.Meetings.StatusServer, nil},
+      CampfireSocialHour.Meetings.StatusServer,
       # Start the Telemetry supervisor
       CampfireSocialHourWeb.Telemetry,
       # Start the PubSub system
