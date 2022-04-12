@@ -1,5 +1,3 @@
 /* This file is for your main application CSS */
-@import "./bootstrap.min.css";
-@import "./style.css";
-@import "./responsive.css";
+@import "./theme-techextra.css";
 
