@@ -10,6 +10,13 @@ defmodule CampfireSocialHourWeb.Plug.MeetingAuth do
     authorize(conn, meeting_id == allowed_meeting_id)
   end
 
+  def fetch_meeting_id(conn, _opts) do
+    meeting_id = Map.get(conn.params, "meeting_id", nil)
+
+    conn
+    |> assign(:meeting_id, meeting_id)
+  end
+
   defp authorize(conn, _allowed = true), do: conn
 
   defp authorize(conn, _not_allowed) do

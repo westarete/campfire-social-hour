@@ -40,7 +40,10 @@ config :esbuild,
 config :dart_sass,
   version: "1.49.11",
   default: [
-    args: ~w(css/app.scss ../priv/static/assets/app.css),
+    args: ~w(
+      css/theme_campfire.scss:../priv/static/assets/theme_campfire.css
+      css/theme_techextra.scss:../priv/static/assets/theme_techextra.css
+    ),
     cd: Path.expand("../assets", __DIR__)
   ]
 

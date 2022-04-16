@@ -31,6 +31,7 @@ defmodule CampfireSocialHourWeb do
     quote do
       use Phoenix.View,
         root: "lib/campfire_social_hour_web/templates",
+        pattern: "**/*",
         namespace: CampfireSocialHourWeb
 
       # Import convenience functions from controllers
@@ -91,6 +92,8 @@ defmodule CampfireSocialHourWeb do
       import CampfireSocialHourWeb.ErrorHelpers
       import CampfireSocialHourWeb.Gettext
       alias CampfireSocialHourWeb.Router.Helpers, as: Routes
+
+      alias CampfireSocialHourWeb.ThemeView
     end
   end
 

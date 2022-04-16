@@ -1,0 +1,12 @@
+<section class="camp-fire-box" id={"meeting-#{@id}"} role="heading" aria-label={"#{@topic} campfire"}>
+  <div class="column-box">
+    <img class="fire" role="presentation" src="/images/theme_campfire/details/Campfire-1.png" alt="" />
+    <a href={@link} class="wood-button" target="_blank" aria-label={@link_aria_label}><%= @topic %></a>
+  </div>
+
+  <ul class="participant-list" id={"participants-#{@id}"} aria-label={"People in the #{@topic} room"} role='list'>
+    <%= for name <- @participants do %>
+      <li role="listitem" class="member-name"><span><%= name %></span></li>
+    <% end %>
+  </ul>
+</section>
