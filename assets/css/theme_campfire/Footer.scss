@@ -1,0 +1,49 @@
+@use "foundation";
+$grass: '/images/theme_campfire/backgrounds/grass.png';
+$groundSign: '/images/theme_campfire/details/groundSign.png';
+
+footer {
+    height: 200px;
+    background-image: url($grass);
+    background-size: cover;
+    background-position: 40% 95%;
+    align-items: center;
+}
+
+.ground-sign {
+    background-image: url($groundSign);
+    background-size: cover;
+    @include foundation.centerColumn(flex-start);
+    align-items: center;
+    height: 200px;
+    width: 207px;
+}
+
+h3 {
+    font-family: foundation.$special;
+}
+
+.julia {
+    @include foundation.centerRow(space-evenly);
+    height: 60px;
+    width: 120px;
+    background-color: white;
+    border: solid 3px foundation.$signBrown;
+    color: foundation.$darkBrown;
+    margin-top: 25px;
+    align-items: center;
+}
+
+
+// mobile
+@media screen and (max-width: 600px) {
+
+    .logo {
+        margin-left: 20px;
+    }
+
+    .mobile-hidden {
+        display: none;
+    }
+
+}

@@ -1,0 +1,156 @@
+@use "foundation";
+
+$topicBanner: '/images/theme_campfire/backgrounds/woodPointed.png';
+$fire: '/images/theme_campfire/details/Campfire-1.png';
+$smore: '/images/theme_campfire/details/Smore.png';
+
+.fire-img {
+    height: 4rem;
+}
+
+.camp-fire-box {
+    height: 300px;
+    width: 100%;
+    border-radius: 75px;
+    font-family: foundation.$special;
+    background-color: foundation.$lightBrown;
+    @include foundation.centerRow(flex-start);
+    align-items: center;
+    border-bottom: solid 1px foundation.$darkBrown;
+}
+
+.column-box {
+    margin-left: 25px;
+    @include foundation.centerColumn(space-evenly);
+    align-items: center;
+    height: 100%;
+}
+
+.fire {
+    height: 50%;
+    filter: drop-shadow(3px 3px 3px rgb(102, 102, 102));
+}
+
+.participant-list {
+    margin: 3px;
+    padding: 0;
+    width: 60%;
+    height: 90%;
+    border-radius: 0 75px 75px 0;
+    overflow: scroll;
+    background: linear-gradient(to right, foundation.$lightBrown 0%, #F0DBAE 50%, #F0DBAE 100%);
+    &:hover {
+        overflow-y: scroll;
+    }
+    &::-webkit-scrollbar {
+        background-color: transparent;
+        width: 10px;
+        }
+    &::-webkit-scrollbar-corner {
+        background: transparent;
+        }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: transparent;
+    }
+    &::-moz-scrollbar {
+        background-color: transparent;
+        width: 10px;
+    }
+    &::-moz-scrollbar-corner {
+        background: transparent;
+    }
+    &::-moz-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: transparent;
+    }
+    &::-ms-scrollbar {
+        background-color: transparent;
+        width: 10px;
+    }
+    &::-ms-scrollbar-corner {
+        background: transparent;
+    }
+    &::-ms-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: transparent;
+    }
+}
+
+.wood-button {
+    background: transparent;
+    background-image: url($topicBanner);
+    background-size: contain;
+    display: inline-block;
+    width: 210px;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    color: foundation.$cream;
+    font-family: foundation.$special;
+    font-size: 20px;
+    line-height: 60px;
+    filter: drop-shadow(3px 3px 3px rgb(54, 54, 54));
+    &:hover {
+        cursor: pointer;
+        transform-origin: center;
+        transform: scale(1.1);
+        color: foundation.$cream;
+    }
+}
+
+.fire-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6);
+    grid-gap: 0;
+}
+
+.member-name {
+    list-style-type: none;
+    margin: 5px;
+    padding: 3px;
+}
+
+.member-name span{
+    border-bottom: solid 1px foundation.$signBrown;
+}
+
+// tablet
+@media screen and (max-width: 1200px) {
+
+    .participant-list {
+        width: 70%;
+    }
+}
+
+
+// mobile
+@media screen and (max-width: 600px) {
+
+    .camp-fire-box {
+        height: 280px;
+        width: auto;
+        @include foundation.boxShadow;
+        @include foundation.centerColumn(center);
+        background: linear-gradient(to top, foundation.$lightBrown 0%, #F0DBAE 50%, #F0DBAE 100%);
+    }
+
+    .column-box {
+        margin: 0;
+        height: auto;
+    }
+
+    .fire {
+        display: none;
+    }
+
+    .participant-list  {
+        width: 90%;
+        background: transparent;
+        text-align: center;
+        border-radius: 0;
+    }
+
+}

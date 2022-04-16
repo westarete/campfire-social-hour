@@ -1,0 +1,127 @@
+@use "foundation";
+$headerBanner: '/images/theme_campfire/backgrounds/woodPointed.png';
+
+header {
+    @include foundation.centerColumn(space-evenly)
+}
+
+.h-title-box, footer {
+    @include foundation.centerRow(space-evenly);
+    padding: 20px;
+}
+
+.logo, .h-logo {
+    height: 55px;
+    margin-top: 25px;
+    border: solid 3px foundation.$signBrown;
+}
+
+.mobile-logos {
+   display: none;
+}
+
+.pine {
+    @include foundation.graphicPosition(7em, 10px, left, 310px);
+}
+
+.pine2 {
+    @include foundation.graphicPosition(5em, 48px, left, 289px);
+}
+
+.pine3 {
+    @include foundation.graphicPosition(7em, 20px, right, 307px);
+}
+
+.pine4 {
+    @include foundation.graphicPosition(5em, 53px, right, 283px)
+}
+
+.bear {
+    @include foundation.graphicPosition(2.5em, 90px, left, 360px)
+}
+
+nav {
+    @include foundation.centerRow(center);
+    align-items: center;
+}
+
+.h-logo {
+    @include foundation.boxShadow;
+}
+
+h1 {
+    font-family: foundation.$special;
+    font-size: 3em;
+    text-align: center;
+}
+
+.banner {
+    -moz-width: 50%;
+    -ms-width: 50%;
+    width: 50%;
+    background-color: foundation.$mapLightest;
+    border-radius: 10px;
+    @include foundation.boxShadow;
+    padding: 20px;
+    color: foundation.$darkBrown;
+}
+
+// tablet
+@media screen and (max-width: 1200px) {
+
+    .pine {
+        @include foundation.graphicPosition(7em, 10px, left, 190px);
+    }
+
+    .pine2 {
+        @include foundation.graphicPosition(5em, 48px, left, 167px);
+    }
+
+    .pine3 {
+        @include foundation.graphicPosition(7em, 20px, right, 207px);
+    }
+
+    .pine4 {
+        @include foundation.graphicPosition(5em, 53px, right, 183px)
+    }
+
+    .bear {
+        @include foundation.graphicPosition(2.5em, 90px, left, 230px)
+    }
+
+}
+
+@media screen and (max-width: 800px){
+
+    .bear, .pine, .pine2, .pine3, .pine4 {
+        display: none;
+    }
+
+}
+
+// mobile
+@media screen and (max-width: 600px) {
+
+    .h-title-box, nav {
+        @include foundation.centerColumn(space-evenly);
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .banner {
+        width: 80%;
+    }
+
+    .h-logo {
+        display: none;
+    }
+
+    .mobile-logos {
+        @include foundation.centerRow(space-evenly);
+        display: visible;
+    }
+
+}
