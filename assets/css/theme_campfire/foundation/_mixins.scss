@@ -1,0 +1,29 @@
+@use "./colors";
+
+@mixin centerRow($content) {
+    display: -moz-flexbox;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    -moz-justify-content: $content !important;
+    -ms-justify-content: $content;
+    justify-content: $content;
+}
+
+@mixin centerColumn($content) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $content;
+}
+
+@mixin boxShadow {
+    box-shadow: 0px 5px 13px 1px colors.$darkGreen;
+}
+
+@mixin graphicPosition($height, $top, $lr, $side) {
+    height: $height;
+    position: absolute;
+    top: $top;
+    #{$lr}: $side;
+    filter: drop-shadow(5px 5px 5px black);
+}

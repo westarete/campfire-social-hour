@@ -1,4 +1,4 @@
-<div class="row row-cols-1 row-cols-sm-2">
+<section class="grid-display content-background row row-cols-1 row-cols-sm-2" aria-label="List of campfires to explore">
   <%= for meeting <- @meetings do %>
     <.live_component module={MeetingComponent}
                       id={meeting.id}
@@ -6,4 +6,4 @@
                       link={meeting.link}
                       participants={participant_names(meeting.participants)} />
   <% end %>
-</div>
+</section>

@@ -36,6 +36,17 @@ config :esbuild,
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
   ]
 
+# Configure dart-sass
+config :dart_sass,
+  version: "1.49.11",
+  default: [
+    args: ~w(
+      css/theme_campfire.scss:../priv/static/assets/theme_campfire.css
+      css/theme_techextra.scss:../priv/static/assets/theme_techextra.css
+    ),
+    cd: Path.expand("../assets", __DIR__)
+  ]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

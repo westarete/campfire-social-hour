@@ -1,6 +1,8 @@
 defmodule CampfireSocialHourWeb.Router do
   use CampfireSocialHourWeb, :router
 
+  import CampfireSocialHourWeb.Plug.MeetingAuth, only: [fetch_meeting_id: 2]
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -8,6 +10,7 @@ defmodule CampfireSocialHourWeb.Router do
     plug :put_root_layout, {CampfireSocialHourWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :fetch_meeting_id
   end
 
   pipeline :api do
@@ -22,7 +25,7 @@ defmodule CampfireSocialHourWeb.Router do
   scope "/", CampfireSocialHourWeb do
     pipe_through :browser
 
-    get "/", PageController, :about
+    get "/", PageController, :index
   end
 
   scope "/meetings/:meeting_id", CampfireSocialHourWeb do
@@ -31,6 +34,8 @@ defmodule CampfireSocialHourWeb.Router do
     live "/",
          MeetingLive.Index,
          :index
+
+    get "/about", PageController, :about
   end
 
   scope "/hooks", CampfireSocialHourWeb.Hooks, as: :hooks do

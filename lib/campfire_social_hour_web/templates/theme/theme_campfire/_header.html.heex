@@ -1,0 +1,46 @@
+<header role='banner'>
+  <div class='h-title-box'>
+    <img class='h-logo' role="presentation" src="/images/theme_campfire/logos/InCommon.png" alt='In Common logo' />
+    <img class='pine' role="presentation" src="/images/theme_campfire/details/Tree-1.png" alt=' pine tree' />
+    <img class='pine2' role="presentation" src="/images/theme_campfire/details/Tree-1.png" alt=' pine tree' />
+    <img class='bear' role="presentation" src="/images/theme_campfire/details/Bear.png" alt=' bear' />
+    <section class='banner'>
+      <h1>CAMP Week Fireside Chats</h1>
+    </section>
+    <img class='pine3' role="presentation" src="/images/theme_campfire/details/Tree-1.png" alt=' pine tree' />
+    <img class='pine4' role="presentation" src="/images/theme_campfire/details/Tree-1.png" alt=' pine tree' />
+    <img class='h-logo' role="presentation" src="/images/theme_campfire/logos/Geant.jpeg" alt='Geant logo' />
+    <div class='mobile-logos'>
+      <img class='logo' role="presentation" src="/images/theme_campfire/logos/InCommon.png" alt='In Common logo' />
+      <img class='logo' role="presentation" src="/images/theme_campfire/logos/Geant.jpeg" alt='Geant logo' />
+    </div>
+  </div>
+
+  <%= if @meeting_id do %>
+    <nav>
+      <%= link "Home",
+          to: Routes.meeting_index_path(CampfireSocialHourWeb.Endpoint, :index, @meeting_id),
+          class: "wood-button",
+          aria_label: "Home page" %>
+
+      <%= link "About",
+          to: Routes.page_path(CampfireSocialHourWeb.Endpoint, :about, @meeting_id),
+          class: "wood-button",
+          aria_label: "About page" %>
+
+      <%= link "Back to Canvas",
+          to: "https://learning.internet2.edu/courses/71",
+          class: "wood-button",
+          target: "_blank" %>
+    </nav>
+  <% end %>
+
+  <%= if assigns[:instructions] do %>
+    <div class="desc-box">
+      <h2 class="site-desc" aria-label='navigation instructions'>
+        Join your friends and meet new colleagues in any of the meet-me rooms below. Click on a room name below to join the other participants in a Zoom room. Feel free to come back and switch rooms any time.
+      </h2>
+    </div>
+  <% end %>
+
+</header>

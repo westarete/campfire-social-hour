@@ -1,0 +1,77 @@
+@use "./foundation";
+/* @import "App.css"; */
+
+body {
+    background: linear-gradient(to bottom, foundation.$green 0%, foundation.$mediumGreen 37%, foundation.$inCommonBlue 100%);
+}
+
+.lost-error {
+    height: 300px;
+    padding: 300px;
+}
+
+.desc-box {
+    @include foundation.centerColumn(center);
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.site-desc {
+    padding: 5px;
+    margin-top: 20px;
+    font-family: foundation.$special;
+    background-color: foundation.$lightBrown;
+    width: 45%;
+    border-radius: 10px;
+    @include foundation.boxShadow;
+}
+
+.content-background {
+    background: linear-gradient(to bottom, #F0DBAE 0%, #F0DBAE 35%, #DCBA86 100%);
+    @include foundation.boxShadow;
+}
+
+.grid-display {
+    padding: 2em;
+    margin: 3em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 300px);
+    grid-gap: 1em;
+    border-radius: 30px;
+}
+
+
+// tablet
+@media screen and (max-width: 1100px) {
+
+    .grid-display {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 3em;
+    }
+
+    .site-desc {
+        width: 70%;
+    }
+
+}
+
+// mobile
+@media screen and (max-width: 600px) {
+
+    .grid-display {
+        padding: 1em;
+        margin: 15px;
+    }
+
+    main {
+        background: none;
+        box-shadow: none;
+    }
+
+    .site-desc {
+        width: 80%;
+    }
+
+}

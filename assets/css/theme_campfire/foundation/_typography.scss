@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Finger+Paint&family=Poller+One&family=Righteous&family=Roboto&display=swap');
+
+$site-font: 'Roboto', sans-serif;
+$special:  'Cabin Sketch', cursive;
+
+* {
+    font-family: $site-font;
+}
+
+/* Basic typography from milligram */
+b,
+strong {
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1.0rem;
+  margin-top: 0;
+}

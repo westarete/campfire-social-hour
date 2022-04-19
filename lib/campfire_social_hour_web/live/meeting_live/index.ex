@@ -8,7 +8,13 @@ defmodule CampfireSocialHourWeb.MeetingLive.Index do
   def mount(_params, _session, socket) do
     if connected?(socket), do: Participants.subscribe()
 
-    {:ok, assign(socket, :meetings, load_meetings())}
+    socket =
+      socket
+      |> assign(:meetings, load_meetings())
+      # Needed to show instructions in header
+      |> assign(:instructions, true)
+
+    {:ok, socket}
   end
 
   @impl true

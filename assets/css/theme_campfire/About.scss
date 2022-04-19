@@ -1,0 +1,73 @@
+@use "foundation";
+
+.about-page {
+  padding: 3em;
+}
+
+.about-content-box {
+  border-radius: 10px;
+  padding: 2em;
+}
+
+.about-title {
+  margin-bottom: 20px;
+  color: foundation.$darkBrown;
+}
+
+a {
+  color: foundation.$mediumGreen;
+  &:hover {
+    color: foundation.$lightGreen;
+  }
+}
+
+.about-h2 {
+  font-family: foundation.$special;
+  color: foundation.$darkBrown;
+  padding: 10px 10px 10px 0;
+}
+
+.center-row {
+  @include foundation.centerRow(space-evenly);
+  align-items: center;
+}
+
+.park-list-box {
+  @include foundation.centerColumn(space-evenly);
+  align-items: flex-start;
+  width: 40%;
+}
+
+.park-list {
+  margin: 10px;
+}
+
+.camp-scene {
+  height: 300px;
+}
+
+// tablet
+@media screen and (max-width: 900px) {
+  .park-list-box {
+    width: 80%;
+  }
+
+  .camp-scene {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .center-row {
+    justify-content: flex-start;
+  }
+
+  .about-page {
+    padding: 1em;
+  }
+
+  .park-list {
+    width: 99%;
+    text-align: start;
+  }
+}
