@@ -21,7 +21,7 @@ defmodule CampfireSocialHourWeb.Theme do
   defp current("campfire") do
     %__MODULE__{
       slug: :theme_campfire,
-      title: "InCommon CAMP",
+      title: "InCommon BaseCAMP",
       title_suffix: "Fireside Chats"
     }
   end
