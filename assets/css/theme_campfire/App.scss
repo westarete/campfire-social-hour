@@ -37,9 +37,9 @@ body {
     margin: 3em;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 300px);
+    grid-auto-rows: 300px;
     grid-gap: 1em;
-    border-radius: 30px;
+    border-radius: 100px;
 }
 
 
