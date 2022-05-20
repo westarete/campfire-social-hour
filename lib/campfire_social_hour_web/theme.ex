@@ -9,7 +9,7 @@ defmodule CampfireSocialHourWeb.Theme do
   @type t :: %__MODULE__{
           slug: theme_slug(),
           title: String.t(),
-          title_suffix: String.t()
+          title_suffix: String.t() | nil
         }
 
   @spec current() :: __MODULE__.t()
@@ -21,8 +21,8 @@ defmodule CampfireSocialHourWeb.Theme do
   defp current("campfire") do
     %__MODULE__{
       slug: :theme_campfire,
-      title: "InCommon BaseCAMP",
-      title_suffix: "Fireside Chats"
+      title: "BaseCAMP Fires",
+      title_suffix: nil
     }
   end
 
