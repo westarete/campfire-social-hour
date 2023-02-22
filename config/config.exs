@@ -43,6 +43,7 @@ config :dart_sass,
     args: ~w(
       css/theme_campfire.scss:../priv/static/assets/theme_campfire.css
       css/theme_techextra.scss:../priv/static/assets/theme_techextra.css
+      css/theme_berkeley.scss:../priv/static/assets/theme_berkeley.css
     ),
     cd: Path.expand("../assets", __DIR__)
   ]

@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  scroll-behavior: initial;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+}
+html {
+  height: 100%;
+}
+body {
+  font-family: "Montserrat";
+  font-size: 14px;
+  height: 100%;
+  font-weight: 400;
+  color: #000;
+  background: #f7f8fc;
+  text-decoration: none;
+}
+
+a {
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  text-decoration: none;
+}
+
+.header {
+  margin-bottom: 60px;
+  padding: 35px 0 150px;
+  width: 100%;
+  position: relative;
+  background: url("/images/theme_berkeley/banner-back.png") 100% 100% no-repeat #f8f8f8;
+  background-size: 100%;
+}
+.header .container {
+}
+.logo-row {
+  width: 100%;
+  margin: 0 0 70px;
+}
+.logo-row .row {
+  align-items: center;
+}
+div#rone {
+  order: 1;
+}
+div#rtwo {
+  order: 2;
+}
+div#rthree {
+  order: 3;
+}
+
+.lg-bx img {
+  width: 80%;
+  margin: 0 auto;
+}
+.center-lg img {
+  width: 100%;
+}
+
+.header .btn-group {
+  margin: 0 0 70px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.header .btn-group .btn-main {
+  padding: 10px 45px;
+  background: #030306;
+  font-size: 21px;
+  font-weight: 600;
+  color: #fff;
+  margin-right: 10px;
+  box-shadow: 0 4px 0 #0d3360;
+}
+.header .btn-group .btn-main:last-child {
+  margin: 0;
+}
+.header .btn-group .btn-main:hover {
+  background: #fff;
+  color: #0d3360;
+}
+
+.desc-box {
+  background: #fff;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 10px;
+  padding: 15px;
+}
+.site-desc {
+  padding: 50px 100px;
+  background: #0d3360;
+  background: url("/images/theme_berkeley/tesselation-transparent.png") 100% 100% no-repeat #0d3360;
+  border-radius: 10px;
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 38px;
+  text-align: center;
+}
+
+.room-wrapper {
+  border-radius: 10px;
+  padding: 20px;
+  background: url("/images/theme_berkeley/room-back.png") 0 0 no-repeat;
+  background-size: cover;
+  margin: 0 0 40px;
+}
+.room {
+  background: #fff;
+  border-radius: 3px;
+  padding: 45px 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.room a {
+  color: #030306;
+}
+.room a:hover {
+  color: #5dbdc5;
+}
+
+.room-title {
+  flex: 0;
+}
+.room-title img {
+  margin: 0 0 10px;
+}
+.room-title h3 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+.room-data {
+  flex: 1;
+  padding: 0 15px 0 25px;
+  height: 175px;
+  overflow: auto;
+}
+.room-data li {
+  font-size: 16px;
+  font-weight: 600;
+  color: #030306;
+  margin: 0 0 13px;
+  line-height: 24px;
+  display: block;
+}
+.room-data li:last-child {
+  margin: 0;
+}
+

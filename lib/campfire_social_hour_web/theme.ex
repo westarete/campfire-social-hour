@@ -4,7 +4,7 @@ defmodule CampfireSocialHourWeb.Theme do
   """
   defstruct [:slug, :title, :title_suffix]
 
-  @type theme_slug :: :theme_campfire | :theme_techextra
+  @type theme_slug :: :theme_campfire | :theme_techextra | :theme_berkeley
 
   @type t :: %__MODULE__{
           slug: theme_slug(),
@@ -31,6 +31,14 @@ defmodule CampfireSocialHourWeb.Theme do
       slug: :theme_techextra,
       title: "Social Hour",
       title_suffix: "Internet2 TechEXtra"
+    }
+  end
+
+  defp current("berkeley") do
+    %__MODULE__{
+      slug: :theme_berkeley,
+      title: "Social Lounge",
+      title_suffix: "Berkeley"
     }
   end
 end
