@@ -5,33 +5,33 @@ defmodule CampfireSocialHour.Meetings.Hardcoded do
     [
       %Meeting{
         topic: "Botanical Garden",
-        id: 6_063_966_747,
-        link: "https://westarete.zoom.us/j/6063966747?pwd=T04vUGMwNnk4dTh4dkFaemE5OWRiZz09"
+        id: 81_441_354_730,
+        link: "https://westarete.zoom.us/j/81441354730?pwd=TU8zakhpcnF0U3hvcks0VEd4eDMrUT09"
       },
       %Meeting{
         topic: "Greek Theater",
-        id: 82_914_677_712,
-        link: "https://us02web.zoom.us/j/82914677712?pwd=MFJiTytkR2lvQitUS01IY3hLR0pYUT09"
+        id: 86_558_209_179,
+        link: "https://westarete.zoom.us/j/86558209179?pwd=M3NGanVJY0dZOWpURnlCcHBRU0xiUT09"
       },
       %Meeting{
         topic: "Faculty Glade",
-        id: 85_789_329_053,
-        link: "https://us02web.zoom.us/j/85789329053?pwd=ZzJBVzFGM2x5VHJEQkpYWnhlUmpPdz09"
+        id: 82_646_774_113,
+        link: "https://westarete.zoom.us/j/82646774113?pwd=dm05ajBXTXZKV3d4blBzRmh2SGZXdz09"
       },
       %Meeting{
         topic: "Berkeley Art Museum/Pacific Film Archive",
-        id: 82_271_294_034,
-        link: "https://us02web.zoom.us/j/82271294034?pwd=UWJUbU9yL3cxT3l3djNQaE5naEJ4QT09"
+        id: 87_935_374_724,
+        link: "https://westarete.zoom.us/j/87935374724?pwd=S2R5REIzQnJjY3UyMitDdmV2T3pHUT09"
       },
       %Meeting{
         topic: "Memorial Stadium",
-        id: 88_571_531_135,
-        link: "https://us02web.zoom.us/j/88571531135?pwd=dmM4YlFNWS9TR29XVlFkUkt6b3hCZz09"
+        id: 81_517_984_710,
+        link: "https://westarete.zoom.us/j/81517984710?pwd=LzJnekZzUzZneTZ4emNnY29IWERrQT09"
       },
       %Meeting{
         topic: "The T-Rex at Valley Life Sciences",
-        id: 83_008_721_265,
-        link: "https://us02web.zoom.us/j/83008721265?pwd=MUIwTkU2K1I1ME9rb3BMeGJ2U1F5UT09"
+        id: 81_743_364_881,
+        link: "https://westarete.zoom.us/j/81743364881?pwd=RVE2c2JOaEtnN3dDV1l0cjFBcEZOZz09"
       }
     ]
   end
