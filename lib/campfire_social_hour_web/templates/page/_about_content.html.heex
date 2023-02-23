@@ -1,21 +1,51 @@
-<h1 class="about-title">About this app</h1>
+<h1 class="about-title">Hello!</h1>
 
-<p>This open-source social tool was created by <a href="https://westarete.com/">West Arete</a>, one of the InCommon Catalysts. This app was donated to the InCommon community because we couldn't find another social hour app that put accessibility first. What good is a social tool if it shuts certain people out?</p>
+<p>Welcome to the UC Berkeley Information Technology (bIT)'s Social Lounge! This accessible web app allows us to join themed Zoom rooms to chat with our friends and colleagues.The rooms topics are:</p>
 
-<p>The front end was designed and developed by Julia Iwinski. The back end was built by West Arete, a certified benefit corporation that helps universities build and sustain their own custom software. Do you have a home-grown app that is rusty or abandoned? An app or vendor that needs better integration with your identity services? A software concept that needs strategy and implementation? West Arete would love to hear about it to see how we might help. Say hello to Scott or Natalie at the conference, or email them at <a href="mailto:team@westarete.com">team@westarete.com</a>!</p>
+<p><strong>Botanical Garden</strong><br/>
+Topics: Gardening, farming, veggies, produce, recipes, cooking fails</p>
 
-<p>Have fun socializing at BaseCAMP!</p>
+<p><strong>Greek Theater</strong><br/>
+Topics: Music, shows, entertainment, gigging, playing music, performing</p>
+
+<p><strong>Faculty Glade</strong><br/>
+Topics: Wedding, picnic, and special events, outdoor living, fishing, camping, Strawberry creek</p>
+
+<p><strong>Berkeley Art Museum/Pacific Film Archive</strong><br/>
+Topics: Art, culture, painting, crafting, movies, films, photography</p>
+
+<p><strong>Memorial Stadium</strong><br/>
+Topics:  Sports, teams, tailgating, kids sports, why Berkeley is better than Stanfurd</p>
+
+<p><strong>The T-Rex at Valley Life Sciences</strong><br/>
+Topics: Animal stories, pet shaming, wildlife encounters, bugs</p>
+
+<p>A big thank you to the FUN Committee for putting together this event:</p>
+
+<p>Simone Burns, Stephanie Dunn, Summer Scanlan, Rob Silva and Margarita Zeglin</p>
+
+<h2>Instructions:</h2>
+
+<p>This accessible app integrates with Zoom, a cloud-based video conferencing platform. The interface allows you to click on the room name of your choice and join the conversation. Just go to bit.westarete.com to see who is in what room, and join one.</p>
+
+<p>To switch rooms, click the “leave meeting” button in Zoom, then return to bit.westarete.com, and click on the name of the room that you want to join through the social tool web app.</p>
+
+<p>Have questions or need help with troubleshooting? Message the FUN Committee via the #fun channel in the bIT slack, or gChat one of your FUN Committee pals.</p>
+
+<h2>About West Arete's Social Tool:</h2>
+
+<p>This open-source social tool was created by West Arete, a certified benefit corporation that builds specialized enterprise software for higher education.</p>
+
+<p>The inspiration for creating this tool was to provide an accessible app that lets people connect in a virtual space. Traditional vendor products on the market for the social part of virtual events are typically inaccessible for people who use assistive technology.</p>
+
+<p>As a benefit corporation, West Arete likes to give back to the higher ed community in meaningful ways. Software should never be a barrier, so it was important to create a space where social time is inclusive to everyone.</p>
 
 <h2>Tech Talk</h2>
 
 <p>This app is written with ❤ in <a href="https://elixir-lang.org">Elixir</a>, a modern language built atop the venerable <a href="https://www.erlang.org">Erlang</a> platform. These technologies allow us to build realtime apps that scale seamlessly across server clusters, handle many concurrent sessions, and self-heal when problems occur.</p>
 
-<p>When you view the meetings dashboard, your browser opens a persistent, two-way connection back to our Elixir server which is maintained as long as your browser tab is open. Meanwhile the Elixir server keeps a list of every active user in every Zoom room by listening for events from Zoom"s webhook API. Whenever Zoom notifies us of a change, the updated list of participants is instantly broadcasted to every connected browser. To keep everything sane, we occasionally poll Zoom"s REST API for the canonical copy of the current state, and save it accordingly (kind of like keyframes and interframes in video compression).</p>
+<p>When you view the meetings dashboard, your browser opens a persistent, two-way connection back to our Elixir server which is maintained as long as your browser tab is open. Meanwhile, the Elixir server keeps a list of every active user in every Zoom room by listening for events from Zoom"s webhook API. Whenever Zoom notifies us of a change, the updated list of participants is instantly broadcasted to every connected browser. To keep everything sane, West Arete occasionally polls Zoom's REST API for the canonical copy of the current state, and saves it accordingly - kind of like keyframes and interframes in video compression.</p>
 
-<p>Because of the way Elixir and Erlang programs are written as a collection of small independent processes that communicate to each other through messaging, we can do all of this without a database, message queuing system, background jobs, or cron. We just use the tools provided by the Elixir standard library and Erlang runtime environment. This makes them ideally suited for realtime web applications with many simultaneous users, where scalability, responsiveness, and reliability are important.</p>
+<p>Because of the way Elixir and Erlang programs are written as a collection of small independent processes that communicate through messaging, West Arete can do all of this without a database, message queuing system, background jobs, or cron. This makes them ideally suited for realtime web applications with many simultaneous users, where scalability, responsiveness, and reliability are important.</p>
 
-<p>In the spirit of most of our work, all of the software for this app is open source. We&apos;re thrilled if you can use or adapt this software for your own conferences and gatherings. And please <a href="https://westarete.com/contact/">contact us</a> if you&apos;d us to customize or host it for you.</p>
-
-<div class="center-row">
-  <img class="camp-scene" src="/images/theme_campfire/details/camp-scene.png" alt="Camping scene" role="presentation" />
-</div>
+<p>All of the software for this app is open source. West Arete is thrilled that you can use or adapt this software for your conferences and gatherings. Please <a href="https://westarete.com/contact/">reach out</a> if you would like West Arete to customize and host this social tool for a future event.</p>
