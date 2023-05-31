@@ -33,7 +33,7 @@ There are a few ENV variables that must be configured for this to work. In dev a
 | Variable           | Purpose                                                      |
 | ------------------ | ------------------------------------------------------------ |
 | ZOOM_API_JWT       | Authorization token for Zoom's REST API. You will need to create one for your app in the Zoom Marketplace |
-| ZOOM_WEBHOOK_TOKEN | A token that Zoom includes when it sends webhooks to us, which allows us to authenticatet that the hook is actually coming from Zoom. This is available in Zoom's app configuration where you set up the webhooks. |
+| ZOOM_SECRET_TOKEN | A token that Zoom includes when it sends webhooks to us, which allows us to authenticate that the hook is actually coming from Zoom. This is available in Zoom's app configuration where you set up the webhooks. |
 | MEETING_SECRET     | Any string value that you want to use to obfuscate the meeting dashboard view. For example if you set this value to "crankstations" then the meetings dashboard will be accessible at https://your.app/meetings/crankstations |
 
 ## Zoom Configuration

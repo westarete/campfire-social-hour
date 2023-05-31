@@ -32,7 +32,7 @@ if config_env() == :prod do
 
   config :campfire_social_hour,
     jwt: System.get_env("ZOOM_API_JWT"),
-    webhook_token: System.get_env("ZOOM_WEBHOOK_TOKEN"),
+    secret_token: System.get_env("ZOOM_SECRET_TOKEN"),
     meeting_secret: System.get_env("MEETING_SECRET"),
     theme: System.get_env("THEME")
 
