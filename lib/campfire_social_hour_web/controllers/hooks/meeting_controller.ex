@@ -5,6 +5,16 @@ defmodule CampfireSocialHourWeb.Hooks.MeetingController do
 
   require Logger
 
+  def event(conn, %{"event" => "endpoint.url_validation", "payload" => %{"plainToken" => token}}) do
+    secret = Application.fetch_env!(:campfire_social_hour, :secret_token)
+
+    hash =
+      :crypto.mac(:hmac, :sha256, secret, token)
+      |> Base.encode16(case: :lower)
+
+    json(conn, %{plainToken: token, encryptedToken: hash})
+  end
+
   def event(conn, params) do
     handle_event(params)
 
