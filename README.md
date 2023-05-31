@@ -61,4 +61,3 @@ Ready to run in production? Please [check Phoenix's deployment guides](https://h
   * Docs: https://hexdocs.pm/phoenix
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
-
