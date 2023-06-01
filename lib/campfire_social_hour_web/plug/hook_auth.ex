@@ -2,6 +2,9 @@ defmodule CampfireSocialHourWeb.Plug.HookAuth do
   import Plug.Conn
   import CampfireSocialHour.Utils, only: [ok: 1]
 
+  @signature_header "x-zm-signature"
+  @timestamp_header "x-zm-request-timestamp"
+
   def init(options), do: options
 
   def call(conn, _opts) do
@@ -19,14 +22,14 @@ defmodule CampfireSocialHourWeb.Plug.HookAuth do
   end
 
   defp signature(conn) do
-    case get_req_header(conn, "x-zm-signature") do
+    case get_req_header(conn, @signature_header) do
       ["v0=" <> signature] -> {:ok, signature}
       _ -> :error
     end
   end
 
   defp timestamp(conn) do
-    case get_req_header(conn, "x-zm-request-timestamp") do
+    case get_req_header(conn, @timestamp_header) do
       [timestamp] -> {:ok, timestamp}
       _ -> :error
     end
