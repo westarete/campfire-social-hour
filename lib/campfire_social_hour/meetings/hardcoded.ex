@@ -5,9 +5,9 @@ defmodule CampfireSocialHour.Meetings.Hardcoded do
   def list_meetings() do
     [
       %Meeting{
-        topic: "Botanical Garden",
-        id: 81_441_354_730,
-        link: "https://westarete.zoom.us/j/81441354730?pwd=TU8zakhpcnF0U3hvcks0VEd4eDMrUT09"
+        topic: "Thirsty Thurs",
+        id: 85_013_324_806,
+        link: "https://us02web.zoom.us/j/85013324806?pwd=Rm9HV3MwZGVLNTZIeXpSZ1laMnA0UT09"
       },
       %Meeting{
         topic: "Greek Theater",

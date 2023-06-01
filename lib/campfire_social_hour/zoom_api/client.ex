@@ -1,23 +1,29 @@
 defmodule CampfireSocialHour.ZoomApi.Client do
-  @moduledoc false
-  use Tesla
+  @moduledoc """
+  Custom Zoom API client for use with the rest of the application
+  """
 
-  plug(Tesla.Middleware.BaseUrl, "https://api.zoom.us/v2")
-  plug(Tesla.Middleware.BearerAuth, token: Application.fetch_env!(:campfire_social_hour, :jwt))
-  plug(Tesla.Middleware.JSON)
+  def new(token) do
+    [
+      {Tesla.Middleware.BaseUrl, "https://api.zoom.us/v2"},
+      {Tesla.Middleware.BearerAuth, token: token},
+      Tesla.Middleware.JSON
+    ]
+    |> Tesla.client()
+  end
 
-  def user_details(user_id) do
-    get("users/#{user_id}")
+  def user_details(client, user_id) do
+    Tesla.get(client, "users/#{user_id}")
     |> handle_response()
   end
 
-  def list_meetings() do
-    get("/metrics/meetings")
+  def list_meetings(client) do
+    Tesla.get(client, "/metrics/meetings")
     |> handle_response()
   end
 
-  def list_meeting_participants(meeting_id) do
-    get("/metrics/meetings/#{meeting_id}/participants")
+  def list_meeting_participants(client, meeting_id) do
+    Tesla.get(client, "/metrics/meetings/#{meeting_id}/participants")
     |> handle_response()
   end
 
