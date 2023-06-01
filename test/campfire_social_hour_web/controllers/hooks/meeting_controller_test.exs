@@ -7,10 +7,6 @@ defmodule CampfireSocialHourWeb.Hooks.MeetingControllerTest do
     conn =
       conn
       |> put_req_header("content-type", "application/json")
-      |> put_req_header(
-        "authorization",
-        Application.fetch_env!(:campfire_social_hour, :webhook_token)
-      )
 
     {:ok, conn: conn}
   end
@@ -25,16 +21,18 @@ defmodule CampfireSocialHourWeb.Hooks.MeetingControllerTest do
 
     test "sets the meeting as active", %{conn: conn, req_body: req_body, meeting_id: meeting_id} do
       Meetings.set_inactive(meeting_id)
-      conn = post(conn, Routes.hooks_meeting_path(conn, :event), req_body)
 
-      assert Meetings.active?(meeting_id)
+      conn =
+        conn
+        |> set_zoom_headers(req_body)
+        |> post(Routes.hooks_meeting_path(conn, :event), req_body)
+
       assert response(conn, 200)
+      assert Meetings.active?(meeting_id)
     end
   end
 
   describe "meeting.started when not authorized" do
-    setup [:unauthorized]
-
     test "lists all participants", %{conn: conn} do
       conn = post(conn, Routes.hooks_meeting_path(conn, :event))
 
@@ -57,11 +55,15 @@ defmodule CampfireSocialHourWeb.Hooks.MeetingControllerTest do
     } do
       Meetings.set_active(meeting_id)
       ZoomMeetingParticipants.add_participant(meeting_id, TestFactory.participant(1))
-      conn = post(conn, Routes.hooks_meeting_path(conn, :event), req_body)
 
+      conn =
+        conn
+        |> set_zoom_headers(req_body)
+        |> post(Routes.hooks_meeting_path(conn, :event), req_body)
+
+      assert response(conn, 200)
       refute Meetings.active?(meeting_id)
       refute Map.has_key?(ZoomMeetingParticipants.get(), meeting_id)
-      assert response(conn, 200)
     end
   end
 
@@ -83,10 +85,14 @@ defmodule CampfireSocialHourWeb.Hooks.MeetingControllerTest do
     } do
       Meetings.set_active(meeting_id)
       ZoomMeetingParticipants.delete(meeting_id)
-      conn = post(conn, Routes.hooks_meeting_path(conn, :event), req_body)
 
-      assert %{^meeting_id => [^participant]} = ZoomMeetingParticipants.get()
+      conn =
+        conn
+        |> set_zoom_headers(req_body)
+        |> post(Routes.hooks_meeting_path(conn, :event), req_body)
+
       assert response(conn, 200)
+      assert %{^meeting_id => [^participant]} = ZoomMeetingParticipants.get()
     end
   end
 
@@ -108,14 +114,31 @@ defmodule CampfireSocialHourWeb.Hooks.MeetingControllerTest do
     } do
       Meetings.set_active(meeting_id)
       ZoomMeetingParticipants.add_participant(meeting_id, participant)
-      conn = post(conn, Routes.hooks_meeting_path(conn, :event), req_body)
 
-      assert %{^meeting_id => []} = ZoomMeetingParticipants.get()
+      conn =
+        conn
+        |> set_zoom_headers(req_body)
+        |> post(Routes.hooks_meeting_path(conn, :event), req_body)
+
       assert response(conn, 200)
+      assert %{^meeting_id => []} = ZoomMeetingParticipants.get()
     end
   end
 
-  defp unauthorized(%{conn: conn}) do
-    {:ok, conn: delete_req_header(conn, "authorization")}
+  defp set_zoom_headers(conn, payload) do
+    timestamp = :os.system_time(:seconds) |> to_string()
+
+    signature =
+      :crypto.mac(
+        :hmac,
+        :sha256,
+        Application.fetch_env!(:campfire_social_hour, :secret_token),
+        "v0:#{timestamp}:#{payload}"
+      )
+      |> Base.encode16(case: :lower)
+
+    conn
+    |> put_req_header("x-zm-signature", "v0=#{signature}")
+    |> put_req_header("x-zm-request-timestamp", timestamp)
   end
 end
