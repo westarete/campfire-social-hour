@@ -32,15 +32,17 @@ There are a few ENV variables that must be configured for this to work. In dev a
 
 | Variable           | Purpose                                                      |
 | ------------------ | ------------------------------------------------------------ |
-| ZOOM_API_JWT       | Authorization token for Zoom's REST API. You will need to create one for your app in the Zoom Marketplace |
 | ZOOM_SECRET_TOKEN | A token that Zoom includes when it sends webhooks to us, which allows us to authenticate that the hook is actually coming from Zoom. This is available in Zoom's app configuration where you set up the webhooks. |
+| ZOOM_ACCOUNT_ID | The Zoom Server-to-server Oauth App's Account ID. This is available in the Zoom app's configuration screen. |
+| ZOOM_CLIENT_ID | The Zoom Server-to-server Oauth App's Client ID. This is available in the Zoom app's configuration screen. |
+| ZOOM_CLIENT_SECRET | The Zoom Server-to-server Oauth App's Client Secret. This is available in the Zoom app's configuration screen. |
 | MEETING_SECRET     | Any string value that you want to use to obfuscate the meeting dashboard view. For example if you set this value to "crankstations" then the meetings dashboard will be accessible at https://your.app/meetings/crankstations |
 
 ## Zoom Configuration
 
-You need to create a JWT app in Zoom. This guide from Zoom's documentation for [creating a JWT app](https://marketplace.zoom.us/docs/guides/build/jwt-app) will walk you through the process. Save the JWT and add it to the configuration above.
+Once the ZOOM_ACCOUNT_ID, ZOOM_CLIENT_ID, and ZOOM_CLIENT_SECRET ENV variables are set, the application will automatically negotiate an Oauth access token on startup and handle refreshing it automatically when necessary.
 
-The next step is to set up webhooks, which Zoom also has a guide for [setting up webhooks](https://marketplace.zoom.us/docs/guides/build/webhook-only-app). Provide the URL for this app running in production and be sure to save the verification token and add it to the above configuration. You will want to subscribe to the following hooks:
+The next step is to set up webhooks, which Zoom also has a guide for [setting up webhooks](https://developers.zoom.us/docs/api/rest/webhook-reference/#set-endpoint-url). Provide the URL for this app running in production and be sure to set the ZOOM_SECRET_TOKEN ENV variable which is provided in the zoom app's page. Once set, you can hit the "Verify" button in the Zoom interface to verify the webhook. You will want to subscribe to the following hooks:
 
 * Start meeting
 
