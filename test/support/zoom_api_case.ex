@@ -1,4 +1,7 @@
 defmodule CampfireSocialHour.ZoomApiCase do
+  @moduledoc """
+  Case module handling Zoom API stubbing
+  """
   use ExUnit.CaseTemplate
 
   setup do
