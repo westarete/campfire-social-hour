@@ -32,8 +32,6 @@ campfire_social_hour-*.tar
 npm-debug.log
 /assets/node_modules/
 
-# In production, we use an ENV variable for the Zoom JWT and other secrets, but
-# in development, it's easier (at the moment) to stick it into an ignored
-# config file. There is room for improvement here
-/config/dev.secret.exs
-/config/test.secret.exs
+# Dotenvy runtime configurations
+.env
+.env.*

@@ -22,7 +22,3 @@ config :campfire_social_hour,
   participants_poller_adapter: CampfireSocialHour.Poller.ParticipantsPoller.Mock
 
 config :tesla, adapter: Tesla.Mock
-
-# Conveniently import secrets in dev/test mode.
-# In production, these are loaded from ENV variables in config/runtime.exs
-import_config "test.secret.exs"

@@ -9,11 +9,11 @@ This app is written in Phoenix and requires an Elixir/Erlang development environ
 Next, copy the config files for dev and test modes:
 
 ```shell
-$ cp config/dev.secret.exs.example config/dev.secret.exs
-$ cp config/test.secret.exs.example config/test.secret.exs
+$ cp dotenv.example .env.dev
+$ cp dotenv.example .env.test
 ```
 
-The values for these configuration files is discussed below
+The values for these configuration files are discussed below
 
 To start your Phoenix server:
 
