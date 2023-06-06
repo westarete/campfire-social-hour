@@ -16,10 +16,10 @@ defmodule CampfireSocialHour.Application do
       CampfireSocialHourWeb.Telemetry,
       # Start the PubSub system
       {Phoenix.PubSub, name: CampfireSocialHour.PubSub},
-      # Start the Endpoint (http/https)
-      CampfireSocialHourWeb.Endpoint,
       # Start the zoom credential refresher agent
       CampfireSocialHour.ZoomCredentialAgent,
+      # Start the Endpoint (http/https)
+      CampfireSocialHourWeb.Endpoint,
       # Start the recurring job to poll Zoom
       CampfireSocialHour.Poller
     ]
