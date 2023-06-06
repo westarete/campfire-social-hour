@@ -49,7 +49,8 @@ defmodule CampfireSocialHour.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:dotenvy, "~> 0.8.0"},
-      {:dialyxir, "~> 1.3", only: [:dev], runtime: false},
+      {:dialyxir, "~> 1.3", only: [:dev, :test], runtime: false},
+      {:credo, "~> 1.7.0-rc.1", only: [:dev, :test], runtime: false},
 
       # HTTP library for making easy API clients. Using the git version because
       # the current release in hexpm (1.4.3) does not support Phx 1.6
@@ -73,7 +74,8 @@ defmodule CampfireSocialHour.MixProject do
         "esbuild default --minify",
         "sass default --no-source-map --style=compressed",
         "phx.digest"
-      ]
+      ],
+      check: ["compile --warnings-as-errors", "format --check-formatted", "credo"]
     ]
   end
 
