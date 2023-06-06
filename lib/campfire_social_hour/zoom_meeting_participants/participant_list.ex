@@ -1,4 +1,5 @@
 defmodule CampfireSocialHour.ZoomMeetingParticipants.ParticipantList do
+  @moduledoc false
   import CampfireSocialHour.Meetings.Meeting, only: [canonize_id: 1]
 
   def new() do

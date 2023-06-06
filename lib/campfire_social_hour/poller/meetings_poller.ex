@@ -1,4 +1,5 @@
 defmodule CampfireSocialHour.Poller.MeetingsPoller do
+  @moduledoc false
   alias CampfireSocialHour.{ZoomApi, Meetings}
 
   require Logger

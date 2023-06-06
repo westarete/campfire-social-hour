@@ -1,4 +1,5 @@
 defmodule CampfireSocialHour.ZoomMeetingParticipants do
+  @moduledoc false
   alias CampfireSocialHour.ZoomMeetingParticipants.{ActiveParticipants, ParticipantServer}
 
   defdelegate start_link(args), to: ParticipantServer

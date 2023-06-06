@@ -1,4 +1,5 @@
 defmodule CampfireSocialHour.TestFixtures do
+  @moduledoc false
   def json(filename) do
     filename
     |> file()

@@ -1,4 +1,5 @@
 defmodule CampfireSocialHour.Meetings.StatusServer do
+  @moduledoc false
   use Agent
 
   import CampfireSocialHour.Meetings.Meeting, only: [canonize_id: 1]

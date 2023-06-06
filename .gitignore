@@ -35,3 +35,7 @@ npm-debug.log
 # Dotenvy runtime configurations
 .env
 .env.*
+
+# Dialyzer
+/priv/plts/*.plt
+/priv/plts/*.plt.hash

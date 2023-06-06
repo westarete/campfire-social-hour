@@ -1,4 +1,5 @@
 defmodule CampfireSocialHourWeb.Plug.MeetingAuth do
+  @moduledoc false
   import Plug.Conn
 
   def init(options), do: options

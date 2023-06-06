@@ -1,4 +1,5 @@
 defmodule CampfireSocialHour.ZoomApi.Client do
+  @moduledoc false
   use Tesla
 
   plug(Tesla.Middleware.BaseUrl, "https://api.zoom.us/v2")

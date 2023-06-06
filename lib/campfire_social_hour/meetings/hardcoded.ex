@@ -1,4 +1,5 @@
 defmodule CampfireSocialHour.Meetings.Hardcoded do
+  @moduledoc false
   alias CampfireSocialHour.Meetings.Meeting
 
   def list_meetings() do
