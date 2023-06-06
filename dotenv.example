@@ -3,8 +3,10 @@
 # configure your development environment, you should copy this file to
 # `.env.dev` and `.env.test` and fill in the correct values.
 
-ZOOM_API_JWT=fake.test.token
 ZOOM_SECRET_TOKEN=fake.zoom.webhook.token
+ZOOM_ACCOUNT_ID=foobar
+ZOOM_CLIENT_ID=foobar
+ZOOM_CLIENT_SECRET=foobar
 MEETING_SECRET=abc123
 THEME=techextra # or "campfire"
 
