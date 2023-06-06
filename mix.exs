@@ -10,7 +10,8 @@ defmodule CampfireSocialHour.MixProject do
       compilers: [:gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      dialyzer: dialyzer()
     ]
   end
 
@@ -48,6 +49,7 @@ defmodule CampfireSocialHour.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:dotenvy, "~> 0.8.0"},
+      {:dialyxir, "~> 1.3", only: [:dev], runtime: false},
 
       # HTTP library for making easy API clients. Using the git version because
       # the current release in hexpm (1.4.3) does not support Phx 1.6
@@ -72,6 +74,14 @@ defmodule CampfireSocialHour.MixProject do
         "sass default --no-source-map --style=compressed",
         "phx.digest"
       ]
+    ]
+  end
+
+  # Dialyzer config
+  defp dialyzer do
+    [
+      plt_add_apps: [:mix, :ex_unit],
+      plt_core_path: "priv/plts"
     ]
   end
 end
