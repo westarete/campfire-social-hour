@@ -1,0 +1,5 @@
+defmodule CampfireSocialHour.ZoomApiStub do
+  @behaviour CampfireSocialHour.ZoomApiBehavior
+
+  def get_access_token(), do: {:ok, %{access_token: "abc123", expires_in: 3600}}
+end

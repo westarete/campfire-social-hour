@@ -1,5 +1,7 @@
 defmodule CampfireSocialHour.ZoomApi do
   @moduledoc false
+  @behaviour CampfireSocialHour.ZoomApiBehavior
+
   alias CampfireSocialHour.ZoomApi.Client
   alias CampfireSocialHour.ZoomApi.OauthClient
   alias CampfireSocialHour.ZoomCredentialAgent

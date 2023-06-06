@@ -23,6 +23,8 @@ config :campfire_social_hour, CampfireSocialHourWeb.Endpoint,
 # at the `config/runtime.exs`.
 config :campfire_social_hour, CampfireSocialHour.Mailer, adapter: Swoosh.Adapters.Local
 
+config :campfire_social_hour, zoom_api: CampfireSocialHour.ZoomApi
+
 # Swoosh API client is needed for adapters other than SMTP.
 config :swoosh, :api_client, false
 

@@ -51,6 +51,7 @@ defmodule CampfireSocialHour.MixProject do
       {:dotenvy, "~> 0.8.0"},
       {:dialyxir, "~> 1.3", only: [:dev, :test], runtime: false},
       {:credo, "~> 1.7.0-rc.1", only: [:dev, :test], runtime: false},
+      {:mox, "~> 1.0", only: :test},
 
       # HTTP library for making easy API clients. Using the git version because
       # the current release in hexpm (1.4.3) does not support Phx 1.6

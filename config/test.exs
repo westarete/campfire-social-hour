@@ -19,6 +19,7 @@ config :phoenix, :plug_init_mode, :runtime
 # Use a mocked version of the Zoom API pollers, that do not actually hammer the zoom api
 config :campfire_social_hour,
   meetings_poller_adapter: CampfireSocialHour.Poller.MeetingsPoller.Mock,
-  participants_poller_adapter: CampfireSocialHour.Poller.ParticipantsPoller.Mock
+  participants_poller_adapter: CampfireSocialHour.Poller.ParticipantsPoller.Mock,
+  zoom_api: CampfireSocialHour.ZoomApiMock
 
 config :tesla, adapter: Tesla.Mock
