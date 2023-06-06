@@ -8,6 +8,10 @@ on:
 
 env:
   MIX_ENV: test
+  ZOOM_API_JWT: foobar
+  ZOOM_SECRET_TOKEN: foobar
+  MEETING_SECRET: foobar
+  THEME: campfire
 
 jobs:
   dependencies:
