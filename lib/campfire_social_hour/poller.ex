@@ -1,4 +1,5 @@
 defmodule CampfireSocialHour.Poller do
+  @moduledoc false
   use GenServer
 
   alias CampfireSocialHour.Poller.{MeetingsPoller, ParticipantsPoller}

@@ -35,7 +35,7 @@ defmodule CampfireSocialHour.ZoomMeetingParticipants.ParticipantListTest do
       |> ParticipantList.update(1, [participant(1), participant(2)])
       |> ParticipantList.delete(1)
 
-    assert length(Map.keys(list)) == 0
+    assert Enum.empty?(Map.keys(list))
 
     # String keys also work
     list =
@@ -43,7 +43,7 @@ defmodule CampfireSocialHour.ZoomMeetingParticipants.ParticipantListTest do
       |> ParticipantList.update(1, [participant(1), participant(2)])
       |> ParticipantList.delete("1")
 
-    assert length(Map.keys(list)) == 0
+    assert Enum.empty?(Map.keys(list))
   end
 
   test "Delete a meeting that doesn't exist" do

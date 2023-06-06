@@ -1,4 +1,5 @@
 defmodule CampfireSocialHour.Meetings.MeetingParticipantJoiner do
+  @moduledoc false
   import CampfireSocialHour.Meetings.Meeting, only: [canonize_id: 1]
 
   # Accepts a list of meetings, and a map of %{meeting_id => [participants]}

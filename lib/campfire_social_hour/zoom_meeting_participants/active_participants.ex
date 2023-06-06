@@ -1,4 +1,5 @@
 defmodule CampfireSocialHour.ZoomMeetingParticipants.ActiveParticipants do
+  @moduledoc false
   def active_participants(participants_response) do
     participants_response
     |> Map.get("participants", [])

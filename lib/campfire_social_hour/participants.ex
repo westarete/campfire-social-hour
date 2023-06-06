@@ -1,4 +1,5 @@
 defmodule CampfireSocialHour.Participants do
+  @moduledoc false
   def subscribe do
     Phoenix.PubSub.subscribe(CampfireSocialHour.PubSub, "participants")
   end

@@ -1,4 +1,5 @@
 defmodule CampfireSocialHourWeb.Plug.HookAuth do
+  @moduledoc false
   import Plug.Conn
   import CampfireSocialHour.Utils, only: [ok: 1]
 

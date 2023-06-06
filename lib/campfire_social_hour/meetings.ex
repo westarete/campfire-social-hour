@@ -1,4 +1,5 @@
 defmodule CampfireSocialHour.Meetings do
+  @moduledoc false
   alias CampfireSocialHour.Meetings.{Hardcoded, MeetingParticipantJoiner, StatusServer}
 
   defdelegate list_meetings(), to: Hardcoded

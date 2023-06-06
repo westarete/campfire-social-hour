@@ -1,4 +1,5 @@
 defmodule CampfireSocialHour.Meetings.MeetingParticipantJoinerTest do
+  @moduledoc false
   use ExUnit.Case, async: true
   alias CampfireSocialHour.Meetings.{Meeting, MeetingParticipantJoiner}
 

@@ -1,4 +1,5 @@
 defmodule TestFactory do
+  @moduledoc false
   def participant(id) do
     %{
       "id" => id,

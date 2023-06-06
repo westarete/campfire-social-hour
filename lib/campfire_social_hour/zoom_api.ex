@@ -1,4 +1,5 @@
 defmodule CampfireSocialHour.ZoomApi do
+  @moduledoc false
   alias CampfireSocialHour.ZoomApi.Client
 
   defdelegate user_details(user_id), to: Client
