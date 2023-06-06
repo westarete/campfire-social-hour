@@ -2,18 +2,21 @@ defmodule CampfireSocialHour.ZoomApi.OauthClient do
   @moduledoc """
   Client for interacting with zoom's oauth flow
   """
-  use Tesla
-
-  plug Tesla.Middleware.BaseUrl, "https://zoom.us/"
-  plug Tesla.Middleware.BasicAuth, username: client_id(), password: client_secret()
-  plug Tesla.Middleware.JSON, engine_opts: [keys: :atoms]
-
   def get_access_token() do
-    case post("/oauth/token", nil,
+    case Tesla.post(client(), "/oauth/token", nil,
            query: [grant_type: "account_credentials", account_id: account_id()]
          ) do
       {:ok, %Tesla.Env{status: 200, body: body}} -> {:ok, body}
     end
+  end
+
+  defp client() do
+    [
+      {Tesla.Middleware.BaseUrl, "https://zoom.us/"},
+      {Tesla.Middleware.BasicAuth, username: client_id(), password: client_secret()},
+      {Tesla.Middleware.JSON, engine_opts: [keys: :atoms]}
+    ]
+    |> Tesla.client()
   end
 
   defp client_id(), do: fetch_env!(:client_id)
