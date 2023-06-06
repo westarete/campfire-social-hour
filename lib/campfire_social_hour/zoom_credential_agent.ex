@@ -40,14 +40,14 @@ defmodule CampfireSocialHour.ZoomCredentialAgent do
   end
 
   @spec get_and_update_token(state) :: {String.t(), state}
-  defp get_and_update_token(nil = _state) do
+  defp get_and_update_token(_state = nil) do
     debug("Token not set, Fetching")
 
     get_token()
     |> token_to_update_tuple()
   end
 
-  defp get_and_update_token(%{expires_at: expires_at, access_token: access_token} = state) do
+  defp get_and_update_token(state = %{expires_at: expires_at, access_token: access_token}) do
     if now() + 1 > expires_at do
       debug("Token Expired, Refreshing")
 
