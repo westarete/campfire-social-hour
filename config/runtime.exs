@@ -6,9 +6,9 @@ source([".env", ".env.#{config_env()}", System.get_env()])
 config :campfire_social_hour,
   secret_token: env!("ZOOM_SECRET_TOKEN", :string!),
   meeting_secret: env!("MEETING_SECRET", :string!),
-  account_id: env("ZOOM_ACCOUNT_ID", :string!),
-  client_id: env("ZOOM_CLIENT_ID", :string!),
-  client_secret: env("ZOOM_CLIENT_SECRET", :string!),
+  account_id: env!("ZOOM_ACCOUNT_ID", :string!),
+  client_id: env!("ZOOM_CLIENT_ID", :string!),
+  client_secret: env!("ZOOM_CLIENT_SECRET", :string!),
   theme: env!("THEME", :string!)
 
 # config/runtime.exs is executed for all environments, including
