@@ -47,6 +47,7 @@ defmodule CampfireSocialHour.MixProject do
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
+      {:dotenvy, "~> 0.8.0"},
 
       # HTTP library for making easy API clients. Using the git version because
       # the current release in hexpm (1.4.3) does not support Phx 1.6

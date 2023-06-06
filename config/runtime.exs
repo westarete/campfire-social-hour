@@ -1,4 +1,13 @@
 import Config
+import Dotenvy
+
+source([".env", ".env.#{config_env()}", System.get_env()])
+
+config :campfire_social_hour,
+  jwt: env!("ZOOM_API_JWT", :string!),
+  secret_token: env!("ZOOM_SECRET_TOKEN", :string!),
+  meeting_secret: env!("MEETING_SECRET", :string!),
+  theme: env!("THEME", :string!)
 
 # config/runtime.exs is executed for all environments, including
 # during releases. It is executed after compilation and before the
@@ -12,12 +21,7 @@ if config_env() == :prod do
   # want to use a different value for prod and you most likely don't want
   # to check this value into version control, so we use an environment
   # variable instead.
-  secret_key_base =
-    System.get_env("SECRET_KEY_BASE") ||
-      raise """
-      environment variable SECRET_KEY_BASE is missing.
-      You can generate one by calling: mix phx.gen.secret
-      """
+  secret_key_base = env!("SECRET_KEY_BASE", :string!)
 
   config :campfire_social_hour, CampfireSocialHourWeb.Endpoint,
     http: [
@@ -26,15 +30,9 @@ if config_env() == :prod do
       # See the documentation on https://hexdocs.pm/plug_cowboy/Plug.Cowboy.html
       # for details about using IPv6 vs IPv4 and loopback vs public addresses.
       ip: {0, 0, 0, 0, 0, 0, 0, 0},
-      port: String.to_integer(System.get_env("PORT") || "4000")
+      port: env!("PORT", :integer!)
     ],
     secret_key_base: secret_key_base
-
-  config :campfire_social_hour,
-    jwt: System.get_env("ZOOM_API_JWT"),
-    secret_token: System.get_env("ZOOM_SECRET_TOKEN"),
-    meeting_secret: System.get_env("MEETING_SECRET"),
-    theme: System.get_env("THEME")
 
   # ## Using releases
   #

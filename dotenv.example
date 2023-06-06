@@ -1,0 +1,12 @@
+# This is an example .env file. We use the `Dotenvy` package for runtime
+# configuration, and you can see where it is used in `runtime.exs`.  To
+# configure your development environment, you should copy this file to
+# `.env.dev` and `.env.test` and fill in the correct values.
+
+ZOOM_API_JWT=fake.test.token
+ZOOM_SECRET_TOKEN=fake.zoom.webhook.token
+MEETING_SECRET=abc123
+THEME=techextra # or "campfire"
+
+# Only used in production
+SECRET_KEY_BASE=
