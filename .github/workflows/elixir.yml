@@ -1,0 +1,129 @@
+name: Elixir CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  MIX_ENV: test
+
+jobs:
+  dependencies:
+    name: Set Up Dependencies
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        elixir: ['1.14.0']
+        otp: ['25.0.4']
+
+    steps:
+    - name: Cancel previous runs
+      uses: styfle/cancel-workflow-action@0.11.0
+      with:
+        access_token: ${{ github.token }}
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Set up Elixir
+      uses: erlef/setup-beam@v1
+      with:
+        elixir-version: ${{ matrix.elixir }} # Define the elixir version [required]
+        otp-version: ${{ matrix.otp }} # Define the OTP version [required]
+        version-type: strict
+    - name: Retrieve Mix Dependencies Cache
+      uses: actions/cache@v3
+      id: mix-cache #id to use in retrieve action
+      with:
+        path: |
+          deps
+          _build
+          priv/plts
+        key: cache-${{ secrets.CI_CACHE_VERSION }}-${{ runner.os }}-${{ matrix.otp }}-${{ matrix.elixir }}-mix-${{ hashFiles(format('{0}{1}', github.workspace, '/mix.lock')) }}
+    - name: Install Mix Dependencies
+      if: steps.mix-cache.outputs.cache-hit != 'true'
+      run: |
+        mkdir -p priv/plts
+        mix local.rebar --force
+        mix local.hex --force
+        mix deps.get
+        mix deps.compile
+        mix dialyzer --plt
+
+
+  static-code-analysis:
+    name: Static Code Analysis
+    needs: dependencies
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        elixir: ['1.14.0']
+        otp: ['25.0.4']
+    steps:
+      - name: Cancel previous runs
+        uses: styfle/cancel-workflow-action@0.11.0
+        with:
+          access_token: ${{ github.token }}
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Elixir
+        uses: erlef/setup-beam@v1
+        with:
+          elixir-version: ${{ matrix.elixir }} # Define the elixir version [required]
+          otp-version: ${{ matrix.otp }} # Define the OTP version [required]
+          version-type: strict
+      - name: Retrieve Mix Dependencies Cache
+        uses: actions/cache@v3
+        id: mix-cache #id to use in retrieve action
+        with:
+          path: |
+            deps
+            _build
+            priv/plts
+          key: cache-${{ secrets.CI_CACHE_VERSION }}-${{ runner.os }}-${{ matrix.otp }}-${{ matrix.elixir }}-mix-${{ hashFiles(format('{0}{1}', github.workspace, '/mix.lock')) }}
+      - name: Check Formatting
+        run: mix format --check-formatted
+      - name: Run Credo
+        run: mix credo
+      - name: Run dialyzer
+        run: mix dialyzer --no-check
+
+  unit-tests:
+    name: Unit Tests
+    needs: dependencies
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        elixir: ['1.14.0']
+        otp: ['25.0.4']
+    steps:
+      - name: Cancel previous runs
+        uses: styfle/cancel-workflow-action@0.11.0
+        with:
+          access_token: ${{ github.token }}
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Elixir
+        uses: erlef/setup-beam@v1
+        with:
+          elixir-version: ${{ matrix.elixir }} # Define the elixir version [required]
+          otp-version: ${{ matrix.otp }} # Define the OTP version [required]
+          version-type: strict
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qpdf
+      - name: Retrieve Mix Dependencies Cache
+        uses: actions/cache@v3
+        id: mix-cache #id to use in retrieve action
+        with:
+          path: |
+            deps
+            _build
+            priv/plts
+          key: cache-${{ secrets.CI_CACHE_VERSION }}-${{ runner.os }}-${{ matrix.otp }}-${{ matrix.elixir }}-mix-${{ hashFiles(format('{0}{1}', github.workspace, '/mix.lock')) }}
+      - name: Run tests
+        run: |
+          npm install --prefix ./assets
+          mix assets.deploy
+          mix test --trace --slowest 10
