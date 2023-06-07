@@ -1,6 +1,12 @@
 <header role='banner'>
-  <div class="h-title-box">
+  <div class='h-title-box'>
+    <img class='h-logo' role="presentation" src="/images/theme_campfire/logos/InCommon.png" alt='In Common logo' />
     <img src={ Routes.static_path(@conn, "/images/theme_campfire/details/banner.png")} class="banner">
+    <img class='h-logo' role="presentation" src="/images/theme_campfire/logos/WestArete.png" alt='West Arete logo' />
+    <div class='mobile-logos'>
+      <img class='logo' role="presentation" src="/images/theme_campfire/logos/InCommon.png" alt='In Common logo' />
+      <img class='logo' role="presentation" src="/images/theme_campfire/logos/WestArete.png" alt='West Arete logo' />
+    </div>
   </div>
 
   <%= if @meeting_id do %>
