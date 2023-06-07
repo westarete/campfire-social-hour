@@ -5,8 +5,8 @@ defmodule CampfireSocialHour.Meetings.MeetingParticipantJoinerTest do
 
   setup do
     meetings = [
-      %Meeting{id: 1, topic: "t1", link: "l1"},
-      %Meeting{id: 2, topic: "t2", link: "l2"}
+      %Meeting{id: 1, topic: "t1", link: "l1", img_name: "foo.png"},
+      %Meeting{id: 2, topic: "t2", link: "l2", img_name: "bar.png"}
     ]
 
     %{meetings: meetings}
@@ -19,8 +19,8 @@ defmodule CampfireSocialHour.Meetings.MeetingParticipantJoinerTest do
     }
 
     assert [
-             %{id: 1, topic: "t1", link: "l1", participants: ["p1"]},
-             %{id: 2, topic: "t2", link: "l2", participants: ["p2"]}
+             %{id: 1, topic: "t1", link: "l1", img_name: "foo.png", participants: ["p1"]},
+             %{id: 2, topic: "t2", link: "l2", img_name: "bar.png", participants: ["p2"]}
            ] ==
              MeetingParticipantJoiner.join(meetings, participants)
   end
@@ -31,8 +31,8 @@ defmodule CampfireSocialHour.Meetings.MeetingParticipantJoinerTest do
     }
 
     assert [
-             %{id: 1, topic: "t1", link: "l1", participants: ["p1"]},
-             %{id: 2, topic: "t2", link: "l2", participants: []}
+             %{id: 1, topic: "t1", link: "l1", img_name: "foo.png", participants: ["p1"]},
+             %{id: 2, topic: "t2", link: "l2", img_name: "bar.png", participants: []}
            ] ==
              MeetingParticipantJoiner.join(meetings, participants)
   end
