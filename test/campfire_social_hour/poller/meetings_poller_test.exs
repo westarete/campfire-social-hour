@@ -1,5 +1,5 @@
 defmodule CampfireSocialHour.Poller.MeetingsPollerTest do
-  use CampfireSocialHour.ZoomApiCase, async: false
+  use ExUnit.Case, async: true
 
   alias CampfireSocialHour.{Meetings, TestFixtures}
   alias CampfireSocialHour.Poller.MeetingsPoller

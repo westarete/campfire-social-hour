@@ -20,6 +20,6 @@ config :phoenix, :plug_init_mode, :runtime
 config :campfire_social_hour,
   meetings_poller_adapter: CampfireSocialHour.Poller.MeetingsPoller.Mock,
   participants_poller_adapter: CampfireSocialHour.Poller.ParticipantsPoller.Mock,
-  zoom_api: CampfireSocialHour.ZoomApiMock
+  zoom_api: CampfireSocialHour.ZoomApiStub
 
 config :tesla, adapter: Tesla.Mock

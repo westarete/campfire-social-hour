@@ -10,12 +10,15 @@ defmodule CampfireSocialHour.ZoomCredentialAgent do
   @type state :: %{access_token: String.t()}
 
   def start_link(opts \\ []),
-    do: GenServer.start_link(__MODULE__, nil, name: opts[:name] || __MODULE__)
+    do: GenServer.start_link(__MODULE__, opts[:initial_state], name: opts[:name] || __MODULE__)
 
   def access_token(name \\ __MODULE__, timeout \\ 5000), do: GenServer.call(name, :fetch, timeout)
 
   @impl true
+  @spec init(nil | state) :: {:ok, state} | {:ok, nil, {:continue, nil}}
   def init(nil), do: {:ok, nil, {:continue, nil}}
+
+  def init(state), do: {:ok, state}
 
   @impl true
   def handle_continue(nil, nil) do
@@ -62,7 +65,7 @@ defmodule CampfireSocialHour.ZoomCredentialAgent do
 
   defp schedule_refresh(%{expires_in: expires_in}) do
     refresh_in = abs(expires_in - @refresh_threshold) * 1000
-    debug("Scheduling Refresh for: #{refresh_in}")
+    debug("Scheduling Refresh in: #{refresh_in}ms")
     Process.send_after(self(), :refresh, refresh_in)
   end
 
