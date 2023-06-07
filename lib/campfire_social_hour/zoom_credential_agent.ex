@@ -1,68 +1,75 @@
 defmodule CampfireSocialHour.ZoomCredentialAgent do
-  @moduledoc """
-  Agent responsible for maintaining zoom client credential state
-  """
-  use Agent
+  use GenServer
   require Logger
 
-  @type state ::
-          nil
-          | %{
-              access_token: String.t(),
-              expires_at: integer
-            }
+  @refresh_threshold 5 * 60
 
-  def start_link(_arg),
-    do: Agent.start_link(fn -> nil end, name: __MODULE__)
+  @type state :: %{access_token: String.t()}
 
-  @spec access_token :: String.t()
-  def access_token(), do: Agent.get_and_update(__MODULE__, &get_and_update_token/1)
+  def start_link(opts \\ []),
+    do: GenServer.start_link(__MODULE__, nil, name: opts[:name] || __MODULE__)
 
-  @spec get_token() :: state
-  defp get_token() do
-    debug("Getting Access Token")
+  def access_token(name \\ __MODULE__, timeout \\ 5000), do: GenServer.call(name, :fetch, timeout)
+
+  @impl true
+  def init(nil), do: {:ok, nil, {:continue, nil}}
+
+  @impl true
+  def handle_continue(nil, nil) do
+    debug("Building initial state")
+    token = request_token_and_schedule_refresh()
+
+    {:noreply, %{access_token: token.access_token}}
+  end
+
+  @impl true
+  def handle_call(:fetch, _from, state) do
+    if state.access_token do
+      debug("Token available, reusing:", state)
+      {:reply, state.access_token, state}
+    else
+      debug("Token not available, refetching...")
+
+      token = request_token_and_schedule_refresh()
+
+      {:reply, token.access_token, %{state | access_token: token.access_token}}
+    end
+  end
+
+  @impl true
+  def handle_info(:refresh, state) do
+    debug("Refreshing token...")
+
+    token = request_token_and_schedule_refresh()
+    {:noreply, %{state | access_token: token.access_token}}
+  end
+
+  defp request_token_and_schedule_refresh(),
+    do: request_token() |> tap(&schedule_refresh/1)
+
+  defp request_token do
+    debug("Requesting Token...")
 
     case zoom_api().get_access_token() do
-      {:ok, %{access_token: access_token, expires_in: expires_in}} ->
-        %{access_token: access_token, expires_at: now() + expires_in}
-
-      :error ->
-        nil
+      {:ok, token} ->
+        debug("-> Token received:", token)
+        token
     end
   end
 
-  @spec token_to_update_tuple(nil | map) :: {nil | String.t(), state}
-  defp token_to_update_tuple(token) do
-    case token do
-      %{access_token: access_token, expires_at: _} = new_state -> {access_token, new_state}
-      nil = new_state -> {nil, new_state}
-    end
+  defp schedule_refresh(%{expires_in: expires_in}) do
+    refresh_in = abs(expires_in - @refresh_threshold) * 1000
+    debug("Scheduling Refresh for: #{refresh_in}")
+    Process.send_after(self(), :refresh, refresh_in)
   end
-
-  @spec get_and_update_token(state) :: {String.t(), state}
-  defp get_and_update_token(_state = nil) do
-    debug("Token not set, Fetching")
-
-    get_token()
-    |> token_to_update_tuple()
-  end
-
-  defp get_and_update_token(state = %{expires_at: expires_at, access_token: access_token}) do
-    if now() + 1 > expires_at do
-      debug("Token Expired, Refreshing")
-
-      get_token()
-      |> token_to_update_tuple()
-    else
-      debug("Token Valid, Reusing")
-      {access_token, state}
-    end
-  end
-
-  @spec now() :: integer
-  defp now(), do: :os.system_time(:seconds)
 
   defp zoom_api(), do: Application.fetch_env!(:campfire_social_hour, :zoom_api)
 
   defp debug(msg), do: Logger.debug("[Zoom Credential Agent] #{msg}")
+
+  defp debug(msg, %{access_token: access_token}) do
+    [msg, "#{String.slice(access_token, 0..10)}..."]
+    |> Enum.join(" ")
+    |> debug()
+  end
 end
