@@ -35,7 +35,6 @@ defmodule CampfireSocialHour.ZoomCredentialAgent do
       {:reply, state.access_token, state}
     else
       debug("Token not available, refetching...")
-
       token = request_token_and_schedule_refresh()
 
       {:reply, token.access_token, %{state | access_token: token.access_token}}
