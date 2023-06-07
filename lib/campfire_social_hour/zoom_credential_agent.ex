@@ -1,4 +1,7 @@
 defmodule CampfireSocialHour.ZoomCredentialAgent do
+  @moduledoc """
+  Zoom credential agent for managing an active api token
+  """
   use GenServer
   require Logger
 
