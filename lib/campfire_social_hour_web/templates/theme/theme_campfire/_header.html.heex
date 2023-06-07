@@ -1,19 +1,6 @@
 <header role='banner'>
-  <div class='h-title-box'>
-    <img class='h-logo' role="presentation" src="/images/theme_campfire/logos/InCommon.png" alt='In Common logo' />
-    <img class='pine' role="presentation" src="/images/theme_campfire/details/Tree-1.png" alt=' pine tree' />
-    <img class='pine2' role="presentation" src="/images/theme_campfire/details/Tree-1.png" alt=' pine tree' />
-    <img class='bear' role="presentation" src="/images/theme_campfire/details/Bear.png" alt=' bear' />
-    <section class='banner'>
-      <h1>BaseCAMP Fires</h1>
-    </section>
-    <img class='pine3' role="presentation" src="/images/theme_campfire/details/Tree-1.png" alt=' pine tree' />
-    <img class='pine4' role="presentation" src="/images/theme_campfire/details/Tree-1.png" alt=' pine tree' />
-    <img class='h-logo' role="presentation" src="/images/theme_campfire/logos/WestArete.png" alt='West Arete logo' />
-    <div class='mobile-logos'>
-      <img class='logo' role="presentation" src="/images/theme_campfire/logos/InCommon.png" alt='In Common logo' />
-      <img class='logo' role="presentation" src="/images/theme_campfire/logos/WestArete.png" alt='West Arete logo' />
-    </div>
+  <div class="h-title-box">
+    <img src={ Routes.static_path(@conn, "/images/theme_campfire/details/banner.png")} class="banner">
   </div>
 
   <%= if @meeting_id do %>
