@@ -14,6 +14,8 @@ defmodule CampfireSocialHourWeb.Plug.HookAuth do
          {:ok, timestamp} <- timestamp(conn),
          {:ok, digest} <- digest(timestamp, conn.assigns.raw_body),
          true <- authorized?(signature, digest) do
+      Logger.debug("Hook Auth Succeeded")
+      Logger.debug("-> Headers: #{inspect(conn.req_headers)}")
       conn
     else
       error ->
