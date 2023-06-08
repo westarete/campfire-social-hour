@@ -2,6 +2,7 @@ defmodule CampfireSocialHourWeb.Plug.HookAuth do
   @moduledoc false
   import Plug.Conn
   import CampfireSocialHour.Utils, only: [ok: 1]
+  require Logger
 
   @signature_header "x-zm-signature"
   @timestamp_header "x-zm-request-timestamp"
@@ -15,7 +16,9 @@ defmodule CampfireSocialHourWeb.Plug.HookAuth do
          true <- authorized?(signature, digest) do
       conn
     else
-      _ ->
+      error ->
+        Logger.debug("Hook Auth Failed: #{inspect(error)}")
+
         conn
         |> send_resp(401, "Not authorized")
         |> halt()
