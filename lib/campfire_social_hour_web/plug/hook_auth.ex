@@ -18,6 +18,7 @@ defmodule CampfireSocialHourWeb.Plug.HookAuth do
     else
       error ->
         Logger.debug("Hook Auth Failed: #{inspect(error)}")
+        Logger.debug("-> Headers: #{inspect(conn.req_headers)}")
 
         conn
         |> send_resp(401, "Not authorized")
