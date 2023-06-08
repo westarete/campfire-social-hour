@@ -5,34 +5,58 @@ defmodule CampfireSocialHour.Meetings.Hardcoded do
   def list_meetings() do
     [
       %Meeting{
-        topic: "Botanical Garden",
-        id: 81_441_354_730,
-        link: "https://westarete.zoom.us/j/81441354730?pwd=TU8zakhpcnF0U3hvcks0VEd4eDMrUT09"
+        topic: "The TAP Room",
+        id: 82_162_938_948,
+        link: "https://westarete.zoom.us/j/82162938948?pwd=S3RoQW01ek1HM1RFbHIyWUgyRi9xdz09",
+        img_name: "sso.png"
       },
       %Meeting{
-        topic: "Greek Theater",
-        id: 86_558_209_179,
-        link: "https://westarete.zoom.us/j/86558209179?pwd=M3NGanVJY0dZOWpURnlCcHBRU0xiUT09"
+        topic: "Federation & Friendship",
+        id: 85_188_826_441,
+        link: "https://westarete.zoom.us/j/85188826441?pwd=NjR3dGFGczZoQ0h5dlA0WGsyTDRpdz09",
+        img_name: "fire-pot.png"
       },
       %Meeting{
-        topic: "Faculty Glade",
-        id: 82_646_774_113,
-        link: "https://westarete.zoom.us/j/82646774113?pwd=dm05ajBXTXZKV3d4blBzRmh2SGZXdz09"
+        topic: "I AM BORG",
+        id: 82_951_060_700,
+        link: "https://westarete.zoom.us/j/82951060700?pwd=a2ZQUWNHbGpTejY0K1NmNzN1NjZ3Zz09",
+        img_name: "compass.png"
       },
       %Meeting{
-        topic: "Berkeley Art Museum/Pacific Film Archive",
-        id: 87_935_374_724,
-        link: "https://westarete.zoom.us/j/87935374724?pwd=S2R5REIzQnJjY3UyMitDdmV2T3pHUT09"
+        topic: "Community Canteen",
+        id: 86_503_553_866,
+        link: "https://westarete.zoom.us/j/86503553866?pwd=WHhxQVVUZVovZGVRaEw0Yy94ajFmUT09",
+        img_name: "community-chat.png"
       },
       %Meeting{
-        topic: "Memorial Stadium",
-        id: 81_517_984_710,
-        link: "https://westarete.zoom.us/j/81517984710?pwd=LzJnekZzUzZneTZ4emNnY29IWERrQT09"
+        topic: "Ghost Stories",
+        id: 85_122_377_210,
+        link: "https://westarete.zoom.us/j/85122377210?pwd=RTA5TWk1aUZHWkt5TG9PYlRGM1NwQT09",
+        img_name: "claw.png"
       },
       %Meeting{
-        topic: "The T-Rex at Valley Life Sciences",
-        id: 81_743_364_881,
-        link: "https://westarete.zoom.us/j/81743364881?pwd=RVE2c2JOaEtnN3dDV1l0cjFBcEZOZz09"
+        topic: "The Mess Hall",
+        id: 86_768_169_687,
+        link: "https://westarete.zoom.us/j/86768169687?pwd=SGNqSk5RR3ZBTG1nY2o2U1NuUXNLdz09",
+        img_name: "basket.png"
+      },
+      %Meeting{
+        topic: "Let's Talk S'More - 1",
+        id: 82_924_055_582,
+        link: "https://westarete.zoom.us/j/82924055582?pwd=VExYbHlGMDB4WXl0cG1YQy81dmRzZz09",
+        img_name: "smore.png"
+      },
+      %Meeting{
+        topic: "Let's Talk S'More - 2",
+        id: 82_016_201_416,
+        link: "https://westarete.zoom.us/j/82016201416?pwd=YkVCbmROQk9UMndzc2tWNm9oQ2JMQT09",
+        img_name: "smore.png"
+      },
+      %Meeting{
+        topic: "Let's Talk S'More - 3",
+        id: 89_185_203_778,
+        link: "https://westarete.zoom.us/j/89185203778?pwd=L1MzWVhKaFhuQ0h1eDkyakRlTlQ5UT09",
+        img_name: "smore.png"
       }
     ]
   end
