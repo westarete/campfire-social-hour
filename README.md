@@ -40,7 +40,7 @@ There are a few ENV variables that must be configured for this to work. In dev a
 | THEME | Can be set to `techextra` or `campfire` and changes the theme accordingly. |
 | SECRET_KEY_BASE | Phoenix secret key base. See runtime.exs |
 | PHX_LOG_LEVEL | Optional. If set, allows you to change the log level in production. Default if unset is `info` but can be set to `debug` for example. |
-| PHX_HOST | The host the site is running at. For example, `basecamp2037.westarete.com`. Since this changes from event to event, it must be set to match whatever DNS host is configured in Route 52 as well as Gigalixer. |
+| PHX_HOST | The host the site is running at. Note that this must be a subdomain of `westarete.com` or runtime.exs needs to be updated as well. (For example, `basecamp2037.westarete.com`). Since this changes from event to event, it must be set to match whatever DNS host is configured in Route 52 as well as Gigalixer. |
 
 ## Zoom Configuration
 
