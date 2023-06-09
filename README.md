@@ -37,6 +37,10 @@ There are a few ENV variables that must be configured for this to work. In dev a
 | ZOOM_CLIENT_ID | The Zoom Server-to-server Oauth App's Client ID. This is available in the Zoom app's configuration screen. |
 | ZOOM_CLIENT_SECRET | The Zoom Server-to-server Oauth App's Client Secret. This is available in the Zoom app's configuration screen. |
 | MEETING_SECRET     | Any string value that you want to use to obfuscate the meeting dashboard view. For example if you set this value to "crankstations" then the meetings dashboard will be accessible at https://your.app/meetings/crankstations |
+| THEME | Can be set to `techextra` or `campfire` and changes the theme accordingly. |
+| SECRET_KEY_BASE | Phoenix secret key base. See runtime.exs |
+| PHX_LOG_LEVEL | Optional. If set, allows you to change the log level in production. Default if unset is `info` but can be set to `debug` for example. |
+| PHX_HOST | The host the site is running at. Note that this must be a subdomain of `westarete.com` or runtime.exs needs to be updated as well. (For example, `basecamp2037.westarete.com`). Since this changes from event to event, it must be set to match whatever DNS host is configured in Route 52 as well as Gigalixer. |
 
 ## Zoom Configuration
 
