@@ -24,15 +24,19 @@ if config_env() == :prod do
   # to check this value into version control, so we use an environment
   # variable instead.
   secret_key_base = env!("SECRET_KEY_BASE", :string!)
+  host = env!("PHX_HOST", :string!)
+  port = env!("PORT", :integer!)
 
   config :campfire_social_hour, CampfireSocialHourWeb.Endpoint,
+    url: [host: host, port: 80],
+    check_origin: ["//campfire-social-hour.gigalixirapp.com", "//*.westarete.com"],
     http: [
       # Enable IPv6 and bind on all interfaces.
       # Set it to  {0, 0, 0, 0, 0, 0, 0, 1} for local network only access.
       # See the documentation on https://hexdocs.pm/plug_cowboy/Plug.Cowboy.html
       # for details about using IPv6 vs IPv4 and loopback vs public addresses.
       ip: {0, 0, 0, 0, 0, 0, 0, 0},
-      port: env!("PORT", :integer!)
+      port: port
     ],
     secret_key_base: secret_key_base
 
