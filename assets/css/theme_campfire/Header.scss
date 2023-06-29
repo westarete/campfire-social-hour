@@ -10,9 +10,12 @@ header {
     padding: 20px;
 }
 
+.h-title-box {
+  align-items: center;
+}
+
 .logo, .h-logo {
-    height: 55px;
-    margin-top: 25px;
+    height: 75px;
     border: solid 3px foundation.$signBrown;
 }
 
