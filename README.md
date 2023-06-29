@@ -30,6 +30,8 @@ This app currently does not use a relational database. Instead, the list of meet
 
 There are a few ENV variables that must be configured for this to work. In dev and test modes, these values can be entered into the respective `config/{env}.secret.exs` files. In test mode you can just use fake values. In production mode, it is expected that these will be in ENV variables.
 
+For the `ZOOM_*` secrets below, the only person who can read those values in the Zoom management dashboard is the person who created the app, nobody else can. If you do not have access to the dashboard, in the 1PW Developers vault for Campfire Social Hour App Secrets for the values.
+
 | Variable           | Purpose                                                      |
 | ------------------ | ------------------------------------------------------------ |
 | ZOOM_SECRET_TOKEN | A token that Zoom includes when it sends webhooks to us, which allows us to authenticate that the hook is actually coming from Zoom. This is available in Zoom's app configuration where you set up the webhooks. |
