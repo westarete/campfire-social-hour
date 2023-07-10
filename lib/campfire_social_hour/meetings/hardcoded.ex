@@ -24,8 +24,8 @@ defmodule CampfireSocialHour.Meetings.Hardcoded do
       },
       %Meeting{
         topic: "Community Canteen",
-        id: 86_503_553_866,
-        link: "https://westarete.zoom.us/j/86503553866?pwd=WHhxQVVUZVovZGVRaEw0Yy94ajFmUT09",
+        id: 81_469_598_503,
+        link: "https://westarete.zoom.us/j/81469598503?pwd=M3Y1M1dXUHFkdHRhOENnQStLSHNiUT09",
         img_name: "community-chat.png"
       },
       %Meeting{
