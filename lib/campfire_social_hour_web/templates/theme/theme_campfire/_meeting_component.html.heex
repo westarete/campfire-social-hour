@@ -4,9 +4,12 @@
     <a href={@link} class="wood-button" target="_blank" aria-label={@link_aria_label}><%= @topic %></a>
   </div>
 
-  <ul class="participant-list" id={"participants-#{@id}"} aria-label={"People in the #{@topic} room"} role='list'>
-    <%= for name <- @participants do %>
-      <li role="listitem" class="member-name"><span><%= name %></span></li>
-    <% end %>
-  </ul>
+  <div class="participant-list">
+    <h3 aria-hidden="true">Attendees:</h3>
+    <ul id={"participants-#{@id}"} aria-label={"People in the #{@topic} room"} role='list'>
+      <%= for name <- @participants do %>
+        <li role="listitem" class="member-name"><span><%= name %></span></li>
+      <% end %>
+    </ul>
+  </div>
 </section>
